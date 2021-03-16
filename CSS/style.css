@@ -1,3 +1,7 @@
-h1 {
-    background-color: blueviolet;
-}
+body{
+    /* width: 1366px;
+    height: 768px; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
