@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for background video */
+#backgroundVideo {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Style for title of the page */
+.Site-Title {
+  text-align: center;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  /* text-decoration: double; */
+  flex: 1;
+  padding: 30px auto;
+  padding-top: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.Text {
+  color: white;
+  text-decoration: none;
+}
+
+/* The div of login form is centered */
+.login-box {
+  color: white;
+  width: 340px;
+  position: absolute;
+  top: 20%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.login-box h1 {
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  border-bottom: 6px solid #413c69;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* Style for textboxes of the form */
+.textbox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #413c69;
+}
+
+.textbox i {
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+
+.textbox input {
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  width: 250px;
+  float: left;
+  margin: 0 10px;
+}
+
+.btn {
+  background: none;
+  border: 2px solid #413c69;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 12px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #413c69;
+}
+
+/* Style for redirecting to signup page */
+.Acc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  padding-top: 8%;
+  text-align: center;
+  width: 100%;
+}
+
+.login-box a {
+  background: none;
+  color: #b19cd9;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 5px;
+}
