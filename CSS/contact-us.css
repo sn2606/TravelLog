@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* color: white; */
+}
+
+/***************************************** CONTACT SECTION STYLING *************************************************/
+.contact {
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img1.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px 100px;
+  position: relative;
+}
+
+/********************************* CONTAINER WITHIN CONTACT SECTION STYLING *****************************************/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/***************************************** LEFT SIDE OF CONTAINER STYLING *************************************************/
+.container .contact-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container .contact-info a {
+  text-decoration: none;
+}
+
+.container .contact-info h2 {
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 20px;
+  margin-top: 0;
+  padding-top: 5px;
+}
+
+.container .contact-info .box {
+  display: flex;
+  padding: 20px 0;
+  position: relative;
+}
+
+.container .contact-info .box .icon {
+  min-width: 50px;
+  height: 50px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.container .contact-info .box .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  margin-left: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.container .contact-info .box .text h3 {
+  color: #e27802;
+}
+
+/***************************************** RIGHT SIDE OF CONTAINER STYLING *************************************************/
+.contact-form {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
+}
+
+.contact-form h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-form .input-box {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-form .input-box input, textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #333;
+  resize: none;
+}
+
+.contact-form .input-box span {
+  position: absolute;
+  left: 0;
+  padding-bottom: 10px;
+  color: gray;
+  font-size: 12px;
+}
+
+.contact-form .input-box input[type="submit"] {
+  background: none;
+  border-radius: 18px;
+  border: 2px solid #e27802;
+  color: #e27802;
+  cursor: pointer;
+}
+
+.contact-form .input-box input[type="submit"]:hover {
+  background-color: #e27802;
+  color: #333;
+}
+
+/***************************************** RESONSIVE STYLING *************************************************/
+@media (max-width: 991px) {
+  .contact {
+    padding: 50px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container .contact-info {
+    margin-bottom: 40px;
+  }
+
+  .container .contact-info, .contact-form {
+    width: 100%;
+  }
+}
