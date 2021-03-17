@@ -1,54 +1,181 @@
 body {
   margin: 0;
+  overflow-y: scroll;
+  /* overflow: hidden; */
   padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.Load-Images {
+  background-image: url('../Images/Background/img1.jpg');
+  background-image: url('../Images/Background/img2.jpg');
+  background-image: url('../Images/Background/img3.jpg');
+  background-image: url('../Images/Background/img4.jpg');
+  background-image: url('../Images/Background/img5.jpg');
+  background-image: url('../Images/Background/pexels-andrei-tanase-1271619.jpg');
+  background-image: url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
+  background-image: url('../Images/Background/pexels-ketut-subiyanto-4436363.jpg');
+  background-image: url('../Images/Background/pexels-nappy-1058959.jpg');
+  background-image: url('../Images/Background/pexels-pixabay-531321.jpg');
+  background-image: url('../Images/Background/pexels-mohamed-almari-368893.jpg');
+  background-image: url('../Images/Mobile-Background/pexels-taryn-elliott-3889855.jpg');
+  background-image: url('../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg');
+  background-image: url('../Images/Mobile-Background/pexels-ketut-subiyanto-4429452.jpg');
+  background-image: url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
+  background-image: url('../Images/Mobile-Background/pexels-michael-block-3225529.jpg');
+  background-image: url('../Images/Mobile-Background/pexels-simon-migaj-885880.jpg');
+  display: none;
 }
 
 /******************************************* BODY CONTENT ***********************************/
 .content {
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)), url('../Images/Background/img3.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* transition: 5s; */
-  animation-name: animate;
-  animation-direction: alternate-reverse;
-  animation-duration: 30s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-  animation-timing-function: ease-in;
-  /* animation: animate 40s infinite; */
 }
 
-@keyframes animate {
-  0% {
+/********************************************* DESKTOP BACKGROUND IMAGE ANIMATION ************************************/
+@media (min-width: 1025px) {
+  .content {
+    animation-name: animate-desktop;
+    animation-direction: alternate-reverse;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* transition: 5s; */
+    /* animation: animate 40s infinite; */
+  }
+}
+
+@keyframes animate-desktop {
+  0% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img1.jpg');
+  }
+
+  10% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img2.jpg');
   }
 
   20% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img3.jpg');
+  }
+
+  30% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img4.jpg');
   }
 
   40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img5.jpg');
+  }
+
+  50% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-andrei-tanase-1271619.jpg');
   }
 
   60% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
+  }
+
+  70% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-ketut-subiyanto-4436363.jpg');
   }
 
   80% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img4.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-nappy-1058959.jpg');
+  }
+
+  90% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-pixabay-531321.jpg');
   }
 
   100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img5.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-mohamed-almari-368893.jpg');
   }
 }
 
+/********************************************* MOBILE BACKGROUND IMAGE ANIMATION ************************************/
+@media (max-width: 1025px) {
+  .content {
+    animation-name: animate-mobile;
+    animation-direction: alternate-reverse;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* transition: 5s; */
+    /* animation: animate 40s infinite; */
+  }
+
+  /* Mobile display styles */
+  .Site-Title {
+    font-size: 40px !important;
+    padding-top: 30px !important;
+  }
+
+  .Tagline {
+    margin: 10px !important;
+    padding-top: 50px !important;
+    width: 90% !important;
+  }
+
+  .Tagline h1 {
+    font-size: 20px !important
+  }
+
+  .Tagline h3 {
+    font-size: 15px !important;
+    margin-bottom: 8% !important;
+  }
+
+  .button {
+    font-size: 16px !important;
+    margin-right: 30px !important;
+  }
+}
+
+@keyframes animate-mobile {
+  0% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-taryn-elliott-3889855.jpg');
+  }
+
+  20% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg');
+  }
+
+  40% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-ketut-subiyanto-4429452.jpg');
+  }
+
+  60% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
+  }
+
+  80% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-michael-block-3225529.jpg');
+  }
+
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-simon-migaj-885880.jpg');
+  }
+}
+
+/********************************************* CONTENT STYLING ************************************/
 .Site-Title {
   text-align: center;
   color: lightgray;
@@ -64,8 +191,12 @@ body {
   color: white;
   margin: 30px;
   padding: 10px;
-  display: inline-block;
-  width: 50%;
+  display: absolute;
+  left: 0;
+  right: 0;
+  padding-top: 100px;
+  width: 60%;
+  margin: auto;
 }
 
 .Tagline h1 {
