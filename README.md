@@ -88,7 +88,7 @@
 [![Product Name Screen Shot]](https://example.com)
 
 
-[![product-screenshot]]
+![product-screenshot]
 
 
 ### Built With
