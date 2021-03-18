@@ -21,6 +21,7 @@
 <body>
   <!-- background video -->
   <video autoplay muted loop id="backgroundVideo" src="../Images/Background/campfire.mp4"></video>
+  <img src="../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg" alt="Mobile-Image" id="backgroundImage">
 
   <!-- title of website -->
   <div class="Site-Title"><a href="../index.html" class="Text">TRAVELLOG</a></div>
@@ -34,7 +35,7 @@
     </div>
     <div class="textbox">
       <i class="fas fa-envelope"></i>
-      <input type="text" placeholder="Email" name="" id="">
+      <input type="email" placeholder="Email" name="" id="">
     </div>
     <div class="textbox">
       <i class="fas fa-at"></i>
@@ -44,7 +45,11 @@
       <i class="fas fa-key"></i>
       <input type="password" placeholder="Password" name="" id="">
     </div>
-    <input onclick="location.href = 'homepage.html';" class="btn" type="button" value="Sign Up">
+
+    <iframe id="t-and-c" src="terms-and-conditions.html" height="100" width="100%" title="Terms and Conditions"></iframe>
+    <input type="checkbox" name="Agree" value="Yes" required> <span class="Acc">I Agree to the Terms and Conditions.</span>
+
+    <input onclick="location.href = 'homepage.html';" class="btn" type="submit" value="Sign Up">
     <hr>
     <div class="Acc">
       Already have an account?

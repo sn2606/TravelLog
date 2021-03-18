@@ -3,6 +3,13 @@ body {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
 /* Style for background video */
 #backgroundVideo {
   object-fit: cover;
@@ -11,6 +18,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+#backgroundImage {
+  display: none;
 }
 
 /* Style for title of the page */
@@ -88,6 +99,13 @@ body {
   margin: 0 10px;
 }
 
+/************** Terms and Conditions iframe ****************/
+#t-and-c {
+  border: none;
+  outline: none;
+  margin: 10px 0;
+}
+
 .btn {
   background: none;
   border: 2px solid #e27802;
@@ -105,6 +123,12 @@ body {
 }
 
 /* Style for redirecting to signup page */
+
+hr {
+  color: #e27802;
+  background-color: #e27802;
+}
+
 .Acc {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -121,4 +145,45 @@ body {
   font-size: 16px;
   margin: 10px 0;
   padding: 5px;
+}
+
+/********************* Responsive Styling *************************************/
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+  }
+
+  #backgroundVideo {
+    display: none;
+  }
+
+  #backgroundImage {
+    /* background-image: url("../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  .Site-Title {
+    width: 90%;
+    font-size: 35px;
+  }
+
+  .login-box h1 {
+    font-size: 20px;
+  }
+
+  .textbox {
+    width: 90%;
+  }
 }
