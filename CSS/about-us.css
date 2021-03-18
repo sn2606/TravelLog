@@ -35,6 +35,7 @@ a{
     opacity: 0.75;
     color: #fff;
     display: flex;
+    cursor: pointer;
 }
 
 a:hover{
