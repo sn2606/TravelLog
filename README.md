@@ -1,6 +1,6 @@
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
+*** that would make this better, please fork the TravelLog and create a pull request
 *** or simply open an issue with the tag "enhancement".
 *** Thanks again! Now go create something AMAZING! :D
 ***
@@ -33,7 +33,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/sn2606/TravelLog">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Images\alps_favicon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">TravelLog</h3>
@@ -46,7 +46,7 @@
     <br />
     <a href="https://github.com/sn2606/TravelLog">View Demo</a>
     ·
-    <a href="https://github.com/sn2606/TravelLog/issues">Report Bug</a>
+    <a href="https://github.com/sn2606/TravelLog/issues">TravelLogrt Bug</a>
     ·
     <a href="https://github.com/sn2606/TravelLog/issues">Request Feature</a>
   </p>
@@ -85,18 +85,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`sn2606`, `TravelLog`, `LinkedIn`, `swaranjananayak@gmail.com`, `TravelLog`, `Social Network website for sharing travel experiences & travel micro-blogging.`
+
+[![product-screenshot]]
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [HTML, CSS, JavaScript]()
+* [fontawesome](https://fontawesome.com/)
+* [pexels](https://www.pexels.com/)
 
 
 
@@ -108,21 +107,15 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Live Server
 
 ### Installation
 
-1. Clone the repo
+1. Clone the TravelLog
    ```sh
    git clone https://github.com/sn2606/TravelLog.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+2. Run the project on a live server
 
 
 
@@ -184,15 +177,18 @@ Project Link: [https://github.com/sn2606/TravelLog](https://github.com/sn2606/Tr
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/sn2606/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/sn2606/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/sn2606/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/sn2606/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/sn2606/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/sn2606/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/sn2606/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/sn2606/repo/issues
-[license-shield]: https://img.shields.io/github/license/sn2606/repo.svg?style=for-the-badge
-[license-url]: https://github.com/sn2606/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/sn2606/TravelLog.svg?style=for-the-badge
+[contributors-url]: https://github.com/sn2606/TravelLog/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/sn2606/TravelLog.svg?style=for-the-badge
+[forks-url]: https://github.com/sn2606/TravelLog/network/members
+[stars-shield]: https://img.shields.io/github/stars/sn2606/TravelLog.svg?style=for-the-badge
+[stars-url]: https://github.com/sn2606/TravelLog/stargazers
+[issues-shield]: https://img.shields.io/github/issues/sn2606/TravelLog.svg?style=for-the-badge
+[issues-url]: https://github.com/sn2606/TravelLog/issues
+[license-shield]: https://img.shields.io/github/license/sn2606/TravelLog.svg?style=for-the-badge
+[license-url]: https://github.com/sn2606/TravelLog/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/sn2606
+[linkedin-url]: https://www.linkedin.com/in/swaranjana-nayak/
+[Product Name Screen Shot]: Images/Landing-Page-Screenshot.png
+[product-screenshot]: Images/about-us-rec.gif
+
