@@ -3,6 +3,13 @@ body {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
 /* Style for background video */
 #backgroundVideo {
   object-fit: cover;
@@ -11,6 +18,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+#backgroundImage {
+  display: none;
 }
 
 /* Style for title of the page */
@@ -127,4 +138,44 @@ body {
   font-size: 18px;
   margin: 12px 0;
   padding: 10px;
+}
+
+/********************* Responsive Styling *************************************/
+
+@media (max-width: 480px) {
+
+  .login-box {
+    width: 90%;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+  }
+
+  #backgroundVideo {
+    display: none;
+  }
+
+  #backgroundImage {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  .Site-Title {
+    width: 90%;
+    font-size: 35px;
+  }
+
+  .login-box h1 {
+    font-size: 20px;
+  }
+
+  .textbox {
+    width: 90%;
+  }
 }
