@@ -189,6 +189,6 @@ Project Link: [https://github.com/sn2606/TravelLog](https://github.com/sn2606/Tr
 [license-url]: https://github.com/sn2606/TravelLog/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/swaranjana-nayak/
-[Product Name Screen Shot]: Images/Landing-Page-Screenshot.png
+[Product Name Screen Shot]: Images/Landing-Page-SS.png
 [product-screenshot]: Images/about-us-rec.gif
 
