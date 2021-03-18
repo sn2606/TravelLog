@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -22,70 +22,68 @@ body {
 }
 
 /*****************************************Header Styles *************************************************/
-
 ul,
 nav {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
 }
 
-a{
-    text-decoration: none;
-    opacity: 0.75;
-    color: #fff;
-    display: flex;
-    cursor: pointer;
+a {
+  text-decoration: none;
+  opacity: 0.75;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
 }
 
-a:hover{
-    opacity: 1;
+a:hover {
+  opacity: 1;
 }
 
 .grid {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 hr {
-    width: 250px;
-    height: 3px;
-    background-color: #3f51b5;
-    border: 0;
-    margin-bottom: 50px;
+  width: 250px;
+  height: 3px;
+  background-color: #3f51b5;
+  border: 0;
+  margin-bottom: 50px;
 }
 
 a.btn {
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    background-color: #333;
-    opacity: 1;
-    color: #fff;
-    border: 2px solid #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  background-color: #333;
+  opacity: 1;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 header {
-    position: absolute;
-    width: 95%;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    align-items: center;
-    animation: 1s fadein 0.5s forwards;
-    opacity: 0;
-    margin: 20px auto;
+  width: 95%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  align-items: center;
+  animation: 1s fadein 0.5s forwards;
+  opacity: 0;
+  margin: 20px auto;
 }
 
 @keyframes fadein {
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 header h2 {
@@ -93,26 +91,30 @@ header h2 {
 }
 
 header nav {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-header nav li{
-    margin: 0 15px;
-    cursor: pointer;
+header nav li {
+  margin: 0 15px;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
 
-    .content {
-      flex-direction: column;
-    }
-    header {
-        /* padding: 20px 50px; */
-        flex-direction: column;
-    }
-    header h2 {
-        margin-bottom: 12px;
-    }
+  header {
+    /* padding: 20px 50px; */
+    flex-direction: column;
+  }
+
+  header h2 {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
 }
 
 /***************************************** Main Content Styles *************************************************/
@@ -217,7 +219,6 @@ section {
 }
 
 /***************************************** Banner 2 aand Banner 3 *************************************************/
-
 .banner2,
 .banner3 {
   position: relative;
@@ -285,7 +286,6 @@ section {
 }
 
 /***************************************** Testimonial Section Styles *************************************************/
-
 .testimonials {
   text-align: center;
 }
@@ -312,7 +312,6 @@ section {
   margin: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -325,10 +324,12 @@ section {
 }
 
 .testimonials .testimonialsList .box .imgBx {
+  display: flex;
   position: relative;
   width: 100px;
   height: 100px;
   border-radius: 100%;
+  margin-top: 20%;
 }
 
 .testimonials-img {
@@ -336,6 +337,7 @@ section {
   height: 100px;
   border-radius: 100%;
 }
+
 .testimonials .testimonialsList .box .content {
   width: 100%;
   height: 80px;
@@ -484,6 +486,7 @@ section {
   text-align: center;
   display: inline-block;
 }
+
 .toTop:hover {
   opacity: 1;
 }
@@ -502,45 +505,96 @@ section {
     width: 90% !important;
   }
 
-  nav a{
+  nav a {
+    font-size: 12px;
     margin: 5px !important;
     padding: 0 !important;
   }
 
-  .banner .content h2 {
-    font-size: 2.5em;
+  .banner .content {
+    width: 95%;
+    /* justify-content: flex-start; */
   }
 
-  .banner .content p {
-    font-size: 1em;
+  h2 {
+    font-size: 2em !important;
+    /* text-align: left !important; */
+  }
+
+  /* p {
+    text-align: left !important;
+  } */
+  p, a {
+    font-size: 1em !important;
   }
 
   .about {
     flex-direction: column;
+    justify-content: flex-start;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .about .contentBx,
-  .about .imgBx {
+  .about .contentBx {
     max-width: 100%;
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding-right: 0px;
   }
 
   .about .imgBx {
-    min-height: 250px;
-  }
-
-  .btn {
-    margin-bottom: 30px;
+    display: none;
   }
 
   .Tagline {
     width: 100% !important;
   }
 
-  .button-flex {
-    justify-content: space-between;
+  .Tagline h1 {
+    font-size: 1.5em !important;
+    text-align: left;
+  }
+
+  .Tagline h3 {
+    font-size: 1em !important;
+    text-align: left;
+  }
+
+  .Tagline .buttons-flex {
+    justify-content: flex-start;
+  }
+
+  .banner2 .Tagline .buttons-flex .btn {
+    margin-right: 20%;
+  }
+
+  .banner3 .Tagline .buttons-flex .btn {
+    font-size: 12px;
+    margin-right: 10%;
+  }
+
+  .btn {
+    margin-bottom: 30px;
+    /* margin-right: 20%; */
+    font-size: 0.7em !important;
+    padding: 10px 10px;
+  }
+
+  .testimonials .content2 .titleText {
+    font-size: 1.5em !important;
+    text-align: left;
+  }
+
+  .testimonials .testimonialsList .box .imgBx {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+
+  .testimonials .testimonialsList .box .content blockquote {
+    padding-top: 0;
+    text-align: left;
   }
 
   .footer .sci li a .fa {
