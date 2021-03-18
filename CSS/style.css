@@ -33,6 +33,93 @@ body {
   display: none;
 }
 
+/*****************************************Header Styles *************************************************/
+
+ul,
+nav {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    opacity: 0.75;
+    color: #fff;
+}
+
+a:hover{
+    opacity: 1;
+}
+
+.grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+hr {
+    width: 250px;
+    height: 3px;
+    background-color: #3f51b5;
+    border: 0;
+    margin-bottom: 50px;
+}
+
+a.btn {
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    background-color: #3f51b5;
+    opacity: 1;
+}
+
+header {
+    position: absolute;
+    width: 95%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    align-items: center;
+    animation: 1s fadein 0.5s forwards;
+    opacity: 0;
+    margin: 20px auto;
+}
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
+}
+
+header h2 {
+  margin-left: 5%;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li{
+    margin: 0 15px;
+}
+
+@media (max-width: 800px) {
+
+    .content {
+      flex-direction: column;
+    }
+    header {
+        /* padding: 20px 50px; */
+        flex-direction: column;
+    }
+    header h2 {
+        margin-bottom: 12px;
+    }
+}
+
 /******************************************* BODY CONTENT ***********************************/
 .content {
   height: 100vh;
@@ -42,6 +129,8 @@ body {
 /********************************************* DESKTOP BACKGROUND IMAGE ANIMATION ************************************/
 @media (min-width: 1025px) {
   .content {
+    display: flex;
+    flex-direction: column;
     animation-name: animate-desktop;
     animation-direction: alternate-reverse;
     animation-duration: 60s;
@@ -107,6 +196,8 @@ body {
 /********************************************* MOBILE BACKGROUND IMAGE ANIMATION ************************************/
 @media (max-width: 1025px) {
   .content {
+    display: flex;
+    flex-direction: column;
     animation-name: animate-mobile;
     animation-direction: alternate-reverse;
     animation-duration: 60s;
@@ -128,12 +219,6 @@ body {
     padding-top: 30px !important;
   }
 
-  .Tagline {
-    margin: 10px !important;
-    padding-top: 50px !important;
-    width: 90% !important;
-  }
-
   .Tagline h1 {
     font-size: 20px !important
   }
@@ -146,6 +231,11 @@ body {
   .button {
     font-size: 16px !important;
     margin-right: 30px !important;
+  }
+
+  .button-flex {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -188,15 +278,18 @@ body {
 }
 
 .Tagline {
+  /* position: relative; */
   color: white;
   margin: 30px;
-  padding: 10px;
-  display: absolute;
-  left: 0;
-  right: 0;
-  padding-top: 100px;
+  /* padding: 10px; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* padding-top: 10%; */
   width: 60%;
   margin: auto;
+  text-align: center;
 }
 
 .Tagline h1 {
@@ -229,8 +322,9 @@ body {
 }
 
 .buttons-flex {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 /******************************************* FOOTER STYLING ***********************************/
