@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/*****************************************Header Styles *************************************************/
+
+ul,
+nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+a{
+    text-decoration: none;
+    opacity: 0.75;
+    color: #fff;
+    display: flex;
+}
+
+a:hover{
+    opacity: 1;
+}
+
+.grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+hr {
+    width: 250px;
+    height: 3px;
+    background-color: #3f51b5;
+    border: 0;
+    margin-bottom: 50px;
+}
+
+a.btn {
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    background-color: #333;
+    opacity: 1;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+header {
+    position: absolute;
+    width: 95%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    align-items: center;
+    animation: 1s fadein 0.5s forwards;
+    opacity: 0;
+    margin: 20px auto;
+}
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
+}
+
+header h2 {
+  margin-left: 5%;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li{
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+
+    .content {
+      flex-direction: column;
+    }
+    header {
+        /* padding: 20px 50px; */
+        flex-direction: column;
+    }
+    header h2 {
+        margin-bottom: 12px;
+    }
+}
+
+/***************************************** Main Content Styles *************************************************/
+section {
+  position: relative;
+  padding: 100px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, #111, transparent);
+  background: linear-gradient(to bottom, #111, transparent);
+}
+
+.banner .content {
+  position: relative;
+  max-width: 900;
+  text-align: center;
+  z-index: 1;
+}
+
+.banner .content h2 {
+  color: #fff;
+  font-size: 5em;
+}
+
+.banner .content p {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 30px;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.fitBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  box-shadow: 8px 8px 8px 8px black inset;
+  background: linear-gradient(to top, #111, transparent);
+  background: linear-gradient(to bottom, #111, transparent);
+  border: none;
+}
+
+.about {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .contentBx {
+  min-width: 50%;
+  width: 50%;
+  text-align: end;
+  padding-right: 40px;
+}
+
+.titleText {
+  font-weight: 600;
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.text {
+  color: #fff;
+  font-size: 1em;
+}
+
+.about .imgBx {
+  position: relative;
+  min-width: 50%;
+  width: 50%;
+  min-height: 500px;
+}
+
+/***************************************** Banner 2 aand Banner 3 *************************************************/
+
+.banner2,
+.banner3 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner2:before,
+.banner3:before {
+  /* content: ''; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, #111, transparent);
+}
+
+.banner2:after,
+.banner3:after {
+  /* content: ''; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to bottom, #111, transparent);
+}
+
+/***************************************** Banner 2 Section Text Styles *************************************************/
+.banner2 .Tagline {
+  color: white !important;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.banner2 .Tagline h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 40px;
+  margin-bottom: 5px;
+  display: inline-block;
+  opacity: 1;
+}
+
+.banner2 .Tagline h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 10%;
+  display: inline-block;
+}
+
+.banner2 .Tagline .buttons-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+/***************************************** Testimonial Section Styles *************************************************/
+
+.testimonials {
+  text-align: center;
+}
+
+.testimonials .content2 {
+  text-align: center;
+}
+
+.testimonials .testimonialsList {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.testimonials .testimonialsList .box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #191919;
+  transition: 0.5s;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.testimonials .testimonialsList:hover .box {
+  opacity: 0.2;
+}
+
+.testimonials .testimonialsList .box:hover {
+  opacity: 1;
+}
+
+.testimonials .testimonialsList .box .imgBx {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.testimonials-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+.testimonials .testimonialsList .box .content {
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials .testimonialsList .box .content blockquote {
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2em;
+  display: flex;
+  padding-top: 100px;
+}
+
+.testimonials .testimonialsList .box .content h2 {
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2em;
+  display: flex;
+}
+
+.testimonials .testimonialsList .box .content span {
+  font-size: 0.8em !important;
+  opacity: 0.5 !important;
+  display: flex !important;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+/***************************************** Banner 3 Section Text Styles *************************************************/
+.banner3 .Tagline {
+  color: white !important;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.banner3 .Tagline h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 40px;
+  margin-bottom: 5px;
+  display: inline-block;
+  opacity: 1;
+}
+
+.banner3 .Tagline h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 10%;
+  display: inline-block;
+}
+
+.banner3 .Tagline .buttons-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+/***************************************** Footer Styles *************************************************/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer .footer-links {
+  color: #ffffff;
+  padding: 0;
+}
+
+.footer .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  margin: 10px;
+  padding: 5px 20px;
+  margin-bottom: 40px;
+}
+
+.footer-links a:hover {
+  background-color: black;
+  text-decoration: underline;
+}
+
+.footer .sci {
+  position: relative;
+  display: flex;
+}
+
+.footer .sci li {
+  list-style: none;
+}
+
+.footer .sci li a {
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.footer .sci li a .fa {
+  color: #fff;
+  font-size: 40px;
+}
+
+.copyrightText {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+}
+
+.copyrightText a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/***************************************** To Top Button Styles *************************************************/
+.toTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding-top: 7px;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  font-size: 25px;
+  z-index: 2;
+  opacity: 0.7;
+  pointer-events: auto;
+  transition: all 0.4s;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: inline-block;
+}
+.toTop:hover {
+  opacity: 1;
+}
+
+/***************************************** Responsive Styles for mobile *************************************************/
+@media (max-width: 767px) {
+  section {
+    padding: 40px;
+  }
+
+  header nav li {
+    margin: 0 !important;
+  }
+
+  nav {
+    width: 90% !important;
+  }
+
+  nav a{
+    margin: 5px !important;
+    padding: 0 !important;
+  }
+
+  .banner .content h2 {
+    font-size: 2.5em;
+  }
+
+  .banner .content p {
+    font-size: 1em;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about .contentBx,
+  .about .imgBx {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .about .imgBx {
+    min-height: 250px;
+  }
+
+  .btn {
+    margin-bottom: 30px;
+  }
+
+  .Tagline {
+    width: 100% !important;
+  }
+
+  .button-flex {
+    justify-content: space-between;
+  }
+
+  .footer .sci li a .fa {
+    font-size: 30px;
+  }
+}
