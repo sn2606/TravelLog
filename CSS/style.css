@@ -75,7 +75,6 @@ a.btn {
 }
 
 header {
-    position: absolute;
     width: 95%;
     color: #fff;
     display: flex;
@@ -219,6 +218,10 @@ header nav li{
     padding-top: 30px !important;
   }
 
+  .Tagline {
+    width: 100% !important;
+  }
+
   .Tagline h1 {
     font-size: 20px !important
   }
@@ -230,7 +233,7 @@ header nav li{
 
   .button {
     font-size: 16px !important;
-    margin-right: 30px !important;
+    /* margin-right: 30px !important; */
   }
 
   .button-flex {
