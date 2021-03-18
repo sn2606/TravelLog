@@ -139,13 +139,49 @@
 
   .container {
     flex-direction: column;
+    align-items: center;
   }
 
   .container .contact-info {
+    padding: 20px 0;
+    justify-content: center;
+  }
+
+  .container .contact-info .box {
+    padding: 0;
+  }
+
+  .container .contact-info .box .icon {
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .container .contact-info a h2 {
+    font-size: 30px;
+  }
+
+  .container .contact-info .box .text {
     margin-bottom: 40px;
+    font-size: 12px !important;
   }
 
   .container .contact-info, .contact-form {
     width: 100%;
+  }
+
+  .contact-form h2 {
+    font-size: 15px;
+  }
+
+  .contact-form .input-box span {
+    font-size: 12px;
+  }
+
+  .contact-form .input-box input, textarea {
+    font-size: 12px;
+  }
+
+  .contact-form .input-box input[type="submit"] {
+    font-size: 12px;
   }
 }
