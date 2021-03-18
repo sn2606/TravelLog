@@ -20,29 +20,60 @@
   <div class="nav-wrapper">
     <nav class="navbar">
       <div class="Logo">
-        <img src="../Images/mountain.png" class="Logo-Img" alt="Alps-Logo">
-        <span class="Logo-Text">TRAVELLOG</span>
-      </div>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <img src="../Images/mountain.png" class="Logo-Img" alt="Alps-Logo" usemap="#home">
+        <a href="../index.html"><span class="Logo-Text">TRAVELLOG</span></a>
       </div>
       <div class="navigation">
         <ul class="menu">
-          <li><a href="#"><span class="menu-text">Home</span></a></li>
-          <li><a href="#"><span class="menu-text">Notifications</span></a></li>
-          <li><a href="#"><span class="menu-text">Profile</span></a></li>
-          <li><a href="#"><span class="menu-text">Sign Out</span></a></li>
+          <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
+          <li><a href="#"><i class="fas fa-bell"></i></a></li>
+          <li><a href="#"><i class="fas fa-user-alt"></i></a></li>
         </ul>
-        <div class="search">
-          <div class="search-content">
-            <button class="search-button"><img src="../Images/search.png" alt="Search-icon"></button>
-            <input type="text" class="search-input" placeholder="Search here...">
+        <div class="not-menu">
+          <div class="search">
+            <div class="search-content">
+              <button class="search-button"><i class="fas fa-search"></i></button>
+              <input type="text" class="search-input" placeholder="Search here...">
+            </div>
+          </div>
+          <div class="sign-out">
+            <a href="../index.html"><span class="menu-text">Sign Out</span></a>
+          </div>
+          <div class="sign-out-mobile">
+            <a href="../index.html"><i class="fas fa-sign-out-alt"></i></a>
           </div>
         </div>
       </div>
     </nav>
+  </div>
+
+  <!-- map for usemap of Logo-Img -->
+  <map name="home">
+    <area shape="default" coords="21,21,21" href="../index.html" alt="Home Page">
+  </map>
+
+  <!-- One Post -->
+  <div id="main-window">
+    <div class="post">
+      <div class="user">
+        <div class="user-stuff">
+          <div class="user-img"></div>
+          <div class="user-info">
+            <div class="user-name">Louis Dickinson</div>
+            <span class="post-date">Yesterday at 11:49</span>
+          </div>
+        </div>
+        <div class="actions">
+          <span class="heart"></span>
+          <span class="comment"></span>
+          <span class="share"></span>
+        </div>
+      </div>
+      <div class="content">
+        <img src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Louis image">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae ipsum aperiam recusandae tempora eos architecto odio, voluptatibus, et fuga veritatis, ratione, magnam laudantium quas accusamus! Ea, maiores! Tenetur, nesciunt.
+      </div>
+    </div>
   </div>
 </body>
 
