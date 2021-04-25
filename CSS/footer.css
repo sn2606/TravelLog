@@ -1,0 +1,101 @@
+a{
+    text-decoration: none;
+    opacity: 0.75;
+    color: #fff;
+}
+
+a:hover{
+    opacity: 1;
+}
+
+/******************************************* FOOTER STYLING ***********************************/
+footer {
+    position: relative;
+    text-align: center!important;
+    padding: 20px;
+    font-size: 20px!important;
+    font-family: 'Montserrat'!important;
+}
+
+hr {
+    /* width: 250px; */
+    height: 3px;
+    background-color: #3f51b5;
+    border: 0;
+    margin-bottom: 50px;
+}
+
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font: bold 16px;
+}
+
+.footer-distributed {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+    margin: 10px;
+    padding: 5px;
+}
+
+.footer-links a:hover {
+    background-color: black;
+    text-decoration: underline;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    /* margin: 0; */
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-icons a:hover {
+    background-color: black;
+}
+
+@media (max-width: 880px) {
+    .footer-distributed {
+        font: bold 14px sans-serif;
+    }
+
+    .main {
+        line-height: normal;
+        font-size: auto;
+    }
+}
