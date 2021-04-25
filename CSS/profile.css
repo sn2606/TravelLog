@@ -25,3 +25,16 @@ nav {
 main {
   padding-top: 3%;
 }
+
+.btn {
+  background-color: #333;
+  border: #333;
+}
+
+main hr {
+  background-color: #333;
+}
+
+.media-body {
+  margin-left: 10px;
+}

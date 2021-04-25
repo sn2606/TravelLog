@@ -52,7 +52,7 @@
             <img src="../Images/Background/pexels-dominika-roseclay-1252500.jpg" class="media-object" style="width: 128px; height: 128px;">
           </div>
           <div class="media-body">
-            <h2 class="media-heading">swaranajna</h2>
+            <h2 class="media-heading">swaranjana</h2>
             <p>Status: I love to code!, Location: India</p>
           </div>
         </div>
