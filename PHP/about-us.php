@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <?php
+  require_once "functions.php";
+  ?>
   <header id="header">
     <h2><a href="../index.php">TRAVELLOG</a></h2>
     <nav>

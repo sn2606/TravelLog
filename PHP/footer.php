@@ -18,6 +18,9 @@
 
 
 <body>
+  <?php
+  require_once "functions.php";
+  ?>
   <!-- footer section -->
   <footer class="footer-distributed">
     <div class="footer-top">

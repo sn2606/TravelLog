@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <?php
+    require_once "functions.php";
+    ?>
 
     <!-- navbar -->
     <div class="nav-wrapper">

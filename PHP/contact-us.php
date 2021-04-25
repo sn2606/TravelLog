@@ -17,6 +17,9 @@
 </head>
 
 <body>
+  <?php
+  require_once "functions.php";
+  ?>
   <section class="contact">
     <div class="container">
       <!-- contact information of the company -->

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +15,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../CSS/profile.css">
 </head>
+
 <body>
   <!-- nav -->
   <?php
+  require_once "functions.php";
   include "header.php";
   ?>
 
@@ -68,7 +71,7 @@
               <p>Hello people! This is my first TravelLog post. Hurray!!!</p>
             </div>
             <div class="panel-footer">
-              <span>posted 2021-4-21 20:45:01 by swaranjana</span> 
+              <span>posted 2021-4-21 20:45:01 by swaranjana</span>
               <span class="pull-right"><a class="text-danger" href="#">[delete]</a></span>
             </div>
           </div>
@@ -83,7 +86,7 @@
             <h4>Friends</h4>
             <ul>
               <li>
-                <a href="#">peterpan</a> 
+                <a href="#">peterpan</a>
                 <a class="text-danger" href="#">[unfriend]</a>
               </li>
             </ul>
@@ -103,4 +106,5 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
+
 </html>
