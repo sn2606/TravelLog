@@ -16,36 +16,10 @@
 
 <body>
 
-  <!-- navbar -->
-  <div class="nav-wrapper">
-    <nav class="navbar">
-      <div class="Logo">
-        <img src="../Images/mountain.png" class="Logo-Img" alt="Alps-Logo" usemap="#home">
-        <a href="../index.php"><span class="Logo-Text">TRAVELLOG</span></a>
-      </div>
-      <div class="navigation">
-        <ul class="menu">
-          <li><a href="../index.php"><i class="fas fa-home"></i></a></li>
-          <li><a href="#"><i class="fas fa-bell"></i></a></li>
-          <li><a href="#"><i class="fas fa-user-alt"></i></a></li>
-        </ul>
-        <div class="not-menu">
-          <div class="search">
-            <div class="search-content">
-              <button class="search-button"><i class="fas fa-search"></i></button>
-              <input type="text" class="search-input" placeholder="Search here...">
-            </div>
-          </div>
-          <div class="sign-out">
-            <a href="../index.php"><span class="menu-text">Sign Out</span></a>
-          </div>
-          <div class="sign-out-mobile">
-            <a href="../index.php"><i class="fas fa-sign-out-alt"></i></a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
+  <!-- navbar/header -->
+  <?php
+  include "header.php";
+  ?>
 
   <!-- map for usemap of Logo-Img -->
   <map name="home">
@@ -75,6 +49,12 @@
       </div>
     </div>
   </div>
+
+  <?php
+  include "footer.php";
+  ?>
+
+
 </body>
 
 </html>
