@@ -19,7 +19,7 @@
 
 <body>
   <header id="header">
-    <h2><a href="../index.html">TRAVELLOG</a></h2>
+    <h2><a href="../index.php">TRAVELLOG</a></h2>
     <nav>
       <li><a href="#">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -65,8 +65,8 @@
       <h3>Connect with other travellers and explorers</h3>
       <br><br>
       <div class="buttons-flex">
-        <a href="login.html" class="btn">Login</a>
-        <a href="signup.html" class="btn">Sign Up</a>
+        <a href="login.php" class="btn">Login</a>
+        <a href="signup.php" class="btn">Sign Up</a>
       </div>
     </div>
   </section>
@@ -119,7 +119,7 @@
         </div>
       </div>
     </div>
-    <a href="../index.html" class="btn">Back To Home</a>
+    <a href="../index.php" class="btn">Back To Home</a>
   </section>
 
   <section class="banner3" id="contribute">
@@ -129,7 +129,7 @@
       <h3>You can contribute to this free platform as a sponsor or as an open source developer</h3>
       <br><br>
       <div class="buttons-flex">
-        <a href="login.html" class="btn">Sponsor</a>
+        <a href="login.php" class="btn">Sponsor</a>
         <a href="https://github.com/sn2606/TravelLog" class="btn">Developer</a>
       </div>
     </div>
@@ -138,7 +138,7 @@
   <section class="footer" id="footer">
     <div class="footer-top">
       <p class="footer-links">
-        <a class="btn" href="contact-us.html">Contact Us</a>
+        <a class="btn" href="contact-us.php">Contact Us</a>
       </p>
     </div>
     <ul class="sci">

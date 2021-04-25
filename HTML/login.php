@@ -23,7 +23,7 @@
   <img src="../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg" alt="Mobile-Image" id="backgroundImage">
 
   <!-- title of website -->
-  <div class="Site-Title"><a href="../index.html" class="Text">TRAVELLOG</a></div>
+  <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
 
   <!-- login form -->
   <div class="login-box">
@@ -40,11 +40,11 @@
       <a href="#">Forgot Password?</a>
     </div>
 
-    <input onclick="location.href = 'homepage.html';" class="btn" type="button" value="Sign In">
+    <input onclick="location.href = 'homepage.php';" class="btn" type="button" value="Sign In">
     <hr>
     <div class="Acc">
       Don't have an account?
-      <a href="signup.html">Create one!</a>
+      <a href="signup.php">Create one!</a>
     </div>
   </div>
 

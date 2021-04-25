@@ -24,7 +24,7 @@
   <img src="../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg" alt="Mobile-Image" id="backgroundImage">
 
   <!-- title of website -->
-  <div class="Site-Title"><a href="../index.html" class="Text">TRAVELLOG</a></div>
+  <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
 
   <!-- login form -->
   <div class="login-box">
@@ -46,14 +46,14 @@
       <input type="password" placeholder="Password" name="" id="">
     </div>
 
-    <iframe id="t-and-c" src="terms-and-conditions.html" height="100" width="100%" title="Terms and Conditions"></iframe>
+    <iframe id="t-and-c" src="terms-and-conditions.php" height="100" width="100%" title="Terms and Conditions"></iframe>
     <input type="checkbox" name="Agree" value="Yes" required> <span class="Acc">I Agree to the Terms and Conditions.</span>
 
-    <input onclick="location.href = 'homepage.html';" class="btn" type="submit" value="Sign Up">
+    <input onclick="location.href = 'homepage.php';" class="btn" type="submit" value="Sign Up">
     <hr>
     <div class="Acc">
       Already have an account?
-      <a href="login.html">Login!</a>
+      <a href="login.php">Login!</a>
     </div>
   </div>
 </body>

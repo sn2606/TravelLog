@@ -21,11 +21,11 @@
     <nav class="navbar">
       <div class="Logo">
         <img src="../Images/mountain.png" class="Logo-Img" alt="Alps-Logo" usemap="#home">
-        <a href="../index.html"><span class="Logo-Text">TRAVELLOG</span></a>
+        <a href="../index.php"><span class="Logo-Text">TRAVELLOG</span></a>
       </div>
       <div class="navigation">
         <ul class="menu">
-          <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
+          <li><a href="../index.php"><i class="fas fa-home"></i></a></li>
           <li><a href="#"><i class="fas fa-bell"></i></a></li>
           <li><a href="#"><i class="fas fa-user-alt"></i></a></li>
         </ul>
@@ -37,10 +37,10 @@
             </div>
           </div>
           <div class="sign-out">
-            <a href="../index.html"><span class="menu-text">Sign Out</span></a>
+            <a href="../index.php"><span class="menu-text">Sign Out</span></a>
           </div>
           <div class="sign-out-mobile">
-            <a href="../index.html"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="../index.php"><i class="fas fa-sign-out-alt"></i></a>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
 
   <!-- map for usemap of Logo-Img -->
   <map name="home">
-    <area shape="default" coords="21,21,21" href="../index.html" alt="Home Page">
+    <area shape="default" coords="21,21,21" href="../index.php" alt="Home Page">
   </map>
 
   <!-- One Post -->

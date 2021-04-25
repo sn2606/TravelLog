@@ -27,9 +27,9 @@
     <header>
       <h2><a href="#">TRAVELLOG</a></h2>
       <nav>
-        <li><a href="HTML/signup.html">Get Started</a></li>
-        <li><a href="HTML/about-us.html">About</a></li>
-        <li><a href="HTML/contact-us.html">Contact</a></li>
+        <li><a href="HTML/signup.php">Get Started</a></li>
+        <li><a href="HTML/about-us.php">About</a></li>
+        <li><a href="HTML/contact-us.php">Contact</a></li>
       </nav>
     </header>
 
@@ -38,8 +38,8 @@
       <h3>Connect with other travellers and explorers</h3>
       <br> <br>
       <div class="buttons-flex">
-        <a href="HTML/login.html" class="button">Login</a>
-        <a href="HTML/signup.html" class="button">Sign Up</a>
+        <a href="HTML/login.php" class="button">Login</a>
+        <a href="HTML/signup.php" class="button">Sign Up</a>
       </div>
     </div>
   </div>
@@ -48,8 +48,8 @@
   <footer class="footer-distributed">
     <div class="footer-top">
       <p class="footer-links">
-        <a href="HTML/about-us.html">About Us</a>
-        <a href="HTML/contact-us.html">Contact Us</a>
+        <a href="HTML/about-us.php">About Us</a>
+        <a href="HTML/contact-us.php">Contact Us</a>
       </p>
     </div>
     <div class="footer-icons">
