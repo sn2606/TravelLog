@@ -1,34 +1,27 @@
 /* styles */
 
 a {
-    color: #3b5998;
-  }
-  
-  .navbar {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-  }
-  
-  .navbar-default {
-    background-color: #3b5998;
-    border-color: #3b5998;
-  }
-  
-  .navbar-default .navbar-brand {
-    color: #fff;
-  }
-  
-  .navbar-default .navbar-brand:focus,
-  .navbar-default .navbar-brand:hover {
-    color: #fff;
-  }
-  
-  .navbar-default .navbar-nav>li>a {
-    color: #fff;
-  }
-  
-  .navbar-default .navbar-nav>li>a:focus,
-  .navbar-default .navbar-nav>li>a:hover {
-    color: #fff;
-  }
+  color: #333;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav-wrapper {
+  position: relative!important;
+}
+
+nav {
+  position: relative!important;
+}
+
+.menu {
+  margin-bottom: 0;
+}
+
+main {
+  padding-top: 3%;
+}
