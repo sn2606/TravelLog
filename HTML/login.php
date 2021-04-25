@@ -19,8 +19,8 @@
 
 <body>
   <!-- background video -->
-  <video autoplay muted loop id="backgroundVideo" src="../Images/Background/campfire.mp4"></video>
-  <img src="../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg" alt="Mobile-Image" id="backgroundImage">
+  <video autoplay muted loop id="backgroundVideo" src="https://player.vimeo.com/external/406227594.sd.mp4?s=d4f7b20af5b399e8a6fe8d4b48c7a6a12a0a4bb3&profile_id=139&oauth2_token_id=57447761"></video>
+  <video autoplay muted loop src="https://player.vimeo.com/external/504717899.sd.mp4?s=f97ae0cbf3dab49c7ddedcbef15346dcac089cdf&profile_id=165&oauth2_token_id=57447761" alt="Mobile-Image" id="backgroundImage"></video>
 
   <!-- title of website -->
   <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
