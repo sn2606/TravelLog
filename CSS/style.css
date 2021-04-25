@@ -12,27 +12,6 @@ body {
   /* Optional: just make scrollbar invisible */
 }
 
-.Load-Images {
-  background-image: url('../Images/Background/img1.jpg');
-  background-image: url('../Images/Background/img2.jpg');
-  background-image: url('../Images/Background/img3.jpg');
-  background-image: url('../Images/Background/img4.jpg');
-  background-image: url('../Images/Background/img5.jpg');
-  background-image: url('../Images/Background/pexels-andrei-tanase-1271619.jpg');
-  background-image: url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
-  background-image: url('../Images/Background/pexels-ketut-subiyanto-4436363.jpg');
-  background-image: url('../Images/Background/pexels-nappy-1058959.jpg');
-  background-image: url('../Images/Background/pexels-pixabay-531321.jpg');
-  background-image: url('../Images/Background/pexels-mohamed-almari-368893.jpg');
-  background-image: url('../Images/Mobile-Background/pexels-taryn-elliott-3889855.jpg');
-  background-image: url('../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg');
-  background-image: url('../Images/Mobile-Background/pexels-ketut-subiyanto-4429452.jpg');
-  background-image: url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
-  background-image: url('../Images/Mobile-Background/pexels-michael-block-3225529.jpg');
-  background-image: url('../Images/Mobile-Background/pexels-simon-migaj-885880.jpg');
-  display: none;
-}
-
 /*****************************************Header Styles *************************************************/
 
 ul,
@@ -84,7 +63,7 @@ header {
     align-items: center;
     animation: 1s fadein 0.5s forwards;
     opacity: 0;
-    margin: 20px auto;
+    padding: 20px auto;
 }
 
 @keyframes fadein {
@@ -102,12 +81,12 @@ header nav {
 }
 
 header nav li{
-    margin: 0 15px;
+    padding: 0 15px;
 }
 
 @media (max-width: 800px) {
 
-    .content {
+    #content {
       flex-direction: column;
     }
     header {
@@ -120,81 +99,14 @@ header nav li{
 }
 
 /******************************************* BODY CONTENT ***********************************/
-.content {
+#content {
   height: 100vh;
   width: 100%;
 }
 
-/********************************************* DESKTOP BACKGROUND IMAGE ANIMATION ************************************/
-@media (min-width: 1025px) {
-  .content {
-    display: flex;
-    flex-direction: column;
-    animation-name: animate-desktop;
-    animation-direction: alternate-reverse;
-    animation-duration: 60s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: ease-in;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* transition: 5s; */
-    /* animation: animate 40s infinite; */
-  }
-}
-
-@keyframes animate-desktop {
-  0% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img1.jpg');
-  }
-
-  10% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img2.jpg');
-  }
-
-  20% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img3.jpg');
-  }
-
-  30% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img4.jpg');
-  }
-
-  40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/img5.jpg');
-  }
-
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-andrei-tanase-1271619.jpg');
-  }
-
-  60% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
-  }
-
-  70% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-ketut-subiyanto-4436363.jpg');
-  }
-
-  80% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-nappy-1058959.jpg');
-  }
-
-  90% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-pixabay-531321.jpg');
-  }
-
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-mohamed-almari-368893.jpg');
-  }
-}
-
 /********************************************* MOBILE BACKGROUND IMAGE ANIMATION ************************************/
 @media (max-width: 1025px) {
-  .content {
+  #content {
     display: flex;
     flex-direction: column;
     animation-name: animate-mobile;
@@ -208,8 +120,6 @@ header nav li{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* transition: 5s; */
-    /* animation: animate 40s infinite; */
   }
 
   /* Mobile display styles */
@@ -242,32 +152,6 @@ header nav li{
   }
 }
 
-@keyframes animate-mobile {
-  0% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-taryn-elliott-3889855.jpg');
-  }
-
-  20% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg');
-  }
-
-  40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-ketut-subiyanto-4429452.jpg');
-  }
-
-  60% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Background/pexels-dominika-roseclay-1252500.jpg');
-  }
-
-  80% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-michael-block-3225529.jpg');
-  }
-
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Mobile-Background/pexels-simon-migaj-885880.jpg');
-  }
-}
-
 /********************************************* CONTENT STYLING ************************************/
 .Site-Title {
   text-align: center;
@@ -281,15 +165,10 @@ header nav li{
 }
 
 .Tagline {
-  /* position: relative; */
   color: white;
   margin: 30px;
-  /* padding: 10px; */
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
-  /* justify-content: center; */
-  /* padding-top: 10%; */
   width: 60%;
   margin: auto;
   text-align: center;
