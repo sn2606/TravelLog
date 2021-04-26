@@ -110,7 +110,20 @@
                       <span id="heart" class="heart"></span>
                       <span class="comment"></span>
                       <span class="share"></span>
-                      <span><i class="far fa-trash-alt"></i></span>
+                      <form method="post" action="delete-post.php" id="delete-post" name="delete-post">
+                        <?php
+                        global $post_id;
+                        $post_id = $post['post_id'];
+                        ?>
+                        <span>
+                          <!-- <label for="delete">
+                            <input type="submit" id="del-this" name="delete" value="Del" class="btn"> -->
+                          <a class="text-danger" href="delete-post.php?id=<?php echo $post['post_id']; ?>">
+                            <i class="far fa-trash-alt"></i>
+                          </a>
+                          <!-- </label> -->
+                        </span>
+                      </form>
                     </div>
                   </div>
                   <div class="content">
