@@ -21,7 +21,7 @@
 
     <!-- navbar -->
     <div class="nav-wrapper">
-        <nav class="navbar">
+        <nav class="navbar" id="header">
             <div class="Logo">
                 <img src="../Images/mountain.png" class="Logo-Img" alt="Alps-Logo" usemap="#home">
                 <a href="../index.php"><span class="Logo-Text">TRAVELLOG</span></a>
