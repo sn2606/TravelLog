@@ -81,7 +81,7 @@
         <div>
           <!-- post -->
           <?php
-          $sql = "SELECT * FROM posts";
+          $sql = "SELECT * FROM posts ORDER BY created_at DESC";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
