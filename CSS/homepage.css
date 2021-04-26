@@ -12,6 +12,56 @@
   /* Optional: just make scrollbar invisible */
 }
 
+/************************************** NAVBAR CUSTOM ************************************************/
+.nav-wrapper {
+  position: relative!important;
+}
+
+nav {
+  position: relative!important;
+}
+
+.menu {
+  margin-bottom: 0;
+}
+
+main {
+  padding-top: 3%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/************************************** TEXT CONTAINER **********************************************/
+.container {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  position: relative;
+  /* height: 100vh; */
+  width: 100%;
+  /* margin-top: 10%; */
+}
+
+a {
+  color: #333;
+}
+
+.btn {
+  background-color: #333;
+  border: #333;
+}
+
+main hr {
+  background-color: #333;
+}
+
+.media-body {
+  margin-left: 10px;
+}
+
 /************************************** ONE POST CARD **********************************************/
 
 #main-window {
