@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../CSS/homepage.css">
   <script src="../JS/scroll-homepage.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../JS/img-size.js" defer></script>
+  <script src="../JS/homepage.js" defer></script>
   <!-- google fonts and fontawesome -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
             <h4>friend requests</h4>
             <ul>
               <li>
-                <a href="#">johndoe</a>
+                <a class="user" href="#">johndoe</a>
                 <a class="text-success" href="#">[accept]</a>
                 <a class="text-danger" href="#">[decline]</a>
               </li>
@@ -107,19 +107,70 @@
                       </div>
                     </div>
                     <div class="actions">
-                      <span class="heart"></span>
+                      <span id="heart" class="heart"></span>
                       <span class="comment"></span>
                       <span class="share"></span>
+                      <span><i class="far fa-trash-alt"></i></span>
                     </div>
                   </div>
                   <div class="content">
                     <?php
-                    if($post['content_img'] != NULL){
+                    if ($post['content_img'] != NULL) {
                       echo '<img src="data:image/jpeg;base64,' . base64_encode($post['content_img']) . '"/>';
                     }
                     echo $post['content'];
                     ?>
                   </div>
+
+                  <!-- how many likes and comments -->
+                  <div class="card__footer">
+                    <span class="card__footer__like">
+                      <i class="far fa-heart"></i> 13
+                    </span>
+                    <span class="card__footer__comment" id="comment-icon">
+                      <i class="far fa-comment"></i> 2
+                    </span>
+                  </div>
+
+                  <!-- comments section -->
+                  <div class="comments-section" comments>
+                    <!-- comment form -->
+                    <form class="clearfix" action="index.php" method="post" id="comment_form">
+                      <h6>Post a comment:</h6>
+                      <textarea name="comment_text" id="comment_text" class="form-control" cols="30" rows="3"></textarea>
+                      <button class="btn btn-primary btn-sm pull-right" id="submit_comment">Submit comment</button>
+                    </form>
+
+                    <!-- Display total number of comments on this post  -->
+                    <hr>
+                    <!-- comments wrapper -->
+                    <div id="comments-wrapper">
+                      <div class="comment clearfix">
+                        <img src="../Images/traveller.png" alt="" class="profile_pic">
+                        <div class="comment-details">
+                          <span class="comment-name">Melvine</span>
+                          <span class="comment-date">Apr 25, 2021</span>
+                          <p>Beautiful!</p>
+                          <a class="reply-btn" href="#">reply</a>
+                        </div>
+                        <div>
+                          <!-- reply -->
+                          <div class="comment reply clearfix">
+                            <img src="../Images/traveller.png" alt="" class="profile_pic">
+                            <div class="comment-details">
+                              <span class="comment-name">Louis Dickinson</span>
+                              <span class="comment-date">Apr 25, 2021</span>
+                              <p>Thank you!</p>
+                              <a class="reply-btn" href="#">reply</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // comments wrapper -->
+                  </div>
+                  <!-- // comments section -->
+
                 </div>
               </div>
             <?php
@@ -142,8 +193,8 @@
             <h4>add friend</h4>
             <ul>
               <li>
-                <a href="#">alberte</a>
-                <a href="#">[add]</a>
+                <a class="user" href="#">alberte</a>
+                <a class="text-success" href="#">[add]</a>
               </li>
             </ul>
           </div>
@@ -156,7 +207,7 @@
             <h4>friends</h4>
             <ul>
               <li>
-                <a href="#">peterpan</a>
+                <a class="user" href="#">peterpan</a>
                 <a class="text-danger" href="#">[unfriend]</a>
               </li>
             </ul>
