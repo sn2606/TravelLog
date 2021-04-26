@@ -17,6 +17,8 @@
   <!-- custom css -->
   <link rel="stylesheet" href="../CSS/homepage.css">
   <script src="../JS/scroll-homepage.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../JS/img-size.js" defer></script>
   <!-- google fonts and fontawesome -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
@@ -27,7 +29,7 @@
   <!-- navbar/header -->
   <?php
   require_once "functions.php";
-  include "header.php";
+  require "header.php";
   dbConnect();
   ?>
 
@@ -66,13 +68,19 @@
       </div>
       <div class="col-md-6">
         <!-- post form -->
-        <form method="post" action="">
+        <form method="post" action="create-post.php" id="create-post" name="create-post" enctype="multipart/form-data">
           <div class="input-group">
             <input class="form-control" type="text" name="content" placeholder="Make a post...">
-            <span class="input-group-btn">
-              <button class="btn btn-success" type="submit" name="post">Post</button>
-            </span>
           </div>
+          <br>
+          <p id="size-chk"></p>
+          <span class="input-group-btn">
+            <label class="btn" type="button" for="get-photo">
+              <input type="file" accept="image/*" name="get-photo" id="get-photo">
+              <i class="far fa-images"></i>
+            </label>
+            <input type="submit" value="Post" name="post" class="btn">
+          </span>
         </form>
         <hr>
         <!-- ./post form -->
@@ -105,22 +113,24 @@
                     </div>
                   </div>
                   <div class="content">
-                    <?php 
-                    echo '<img src="data:image/jpeg;base64,'.base64_encode( $post['content_img'] ).'"/>';
-                    echo $post['content']; 
+                    <?php
+                    if($post['content_img'] != NULL){
+                      echo '<img src="data:image/jpeg;base64,' . base64_encode($post['content_img']) . '"/>';
+                    }
+                    echo $post['content'];
                     ?>
                   </div>
                 </div>
               </div>
             <?php
-                }
-              } else {
+            }
+          } else {
             ?>
-                <p class="text-center">No posts yet!</p>
-            <?php
-              }
-            $conn->close();
-            ?>
+            <p class="text-center">No posts yet!</p>
+          <?php
+          }
+          $conn->close();
+          ?>
           <!-- ./post -->
         </div>
         <!-- ./feed -->

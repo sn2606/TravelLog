@@ -12,3 +12,7 @@
         }
         // echo '<h1 style="color: green;">Connected to DB!</h1>';
     }
+
+    function redirect_to($location){
+        header('Location:'.$location);
+    }

@@ -49,13 +49,25 @@ a {
   color: #333;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.input-group-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn {
   background-color: #333;
   border: #333;
+  color: #fff;
+  margin: 0;
 }
 
-main hr {
+.container hr {
   background-color: #333;
+  margin-bottom: 0px;
 }
 
 .media-body {
@@ -66,7 +78,6 @@ main hr {
 
 #main-window {
   margin:auto;
-  top:80px;
   left:0;
   right:0;
   max-width:650px;
@@ -76,7 +87,7 @@ main hr {
 }
 
 .post {
-  margin:20px auto 60px;
+  margin:10px;
   width:90%;
   background:#fff;
   border-radius:4px;
