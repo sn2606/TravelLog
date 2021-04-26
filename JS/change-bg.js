@@ -5,11 +5,6 @@ window.onload = function(){
 
     var x = window.matchMedia("(max-width: 1025px)");
     if(x.matches){
-      image.style.backgroundImage = 'background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg")';
-      image.style.backgroundSize = "cover";
-      image.style.backgroundRepeat = "no-repeat";
-      image.style.backgroundPosition = "center";
-
       //   Background Images
       var images = [
         'url(../Images/Mobile-Background/pexels-taryn-elliott-3889855.jpg)',
@@ -22,23 +17,13 @@ window.onload = function(){
       
     //   change image every after 5 seconds
       var i = 0;
-      images.onload = setInterval(function() {
-          i = Math.floor(images.length * Math.random());
-          image.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ' + images[i];
-          image.style.backgroundSize = "cover";
-          image.style.backgroundRepeat = "no-repeat";
-          image.style.backgroundPosition = "center";
-        if(i == images.length - 1)
-          i = 0;
-      }, 5000)
-
-    } else {
-          
-    //   set initial background-image
-      image.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ' + 'url(../Images/Background/pexels-mohamed-almari-368893.jpg)';
+      i = Math.floor(images.length * Math.random());
+      image.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ' + images[i];
       image.style.backgroundSize = "cover";
       image.style.backgroundRepeat = "no-repeat";
       image.style.backgroundPosition = "center";
+
+    } else {
       
     //   Background Images
       var images = [
@@ -57,21 +42,11 @@ window.onload = function(){
       
     //   change image every after 5 seconds
       var i = 0;
-      images.onload = setInterval(function() {
-          i = Math.floor(images.length * Math.random());
-          console.log(i);
-
-          // $('#content').animate({opacity: 0}, 'slow', function() {
-          //     $(this).css({
-          //         'background-image': images[i]
-          //     }).animate({opacity: 1}, 'fast');
-          // });
-          image.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ' + images[i];
-          image.style.backgroundSize = "cover";
-          image.style.backgroundRepeat = "no-repeat";
-          image.style.backgroundPosition = "center";
-        if(i == images.length - 1)
-          i = 0;
-      }, 5000)
+      i = Math.floor(images.length * Math.random());
+      console.log(i);
+      image.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ' + images[i];
+      image.style.backgroundSize = "cover";
+      image.style.backgroundRepeat = "no-repeat";
+      image.style.backgroundPosition = "center";
     }
 }

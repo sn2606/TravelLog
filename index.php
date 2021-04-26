@@ -22,7 +22,8 @@
 
 <body>
   <?php
-  require_once "functions.php";
+  require_once "PHP/functions.php";
+  dbConnect();
   ?>
   <!-- short content -->
   <div id="content">
