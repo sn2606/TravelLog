@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="sign-out">
-                        <a href="../index.php"><span class="menu-text">Sign Out</span></a>
+                        <a href="logout.php"><span class="menu-text">Sign Out</span></a>
                     </div>
                     <div class="sign-out-mobile">
                         <a href="../index.php"><i class="fas fa-sign-out-alt"></i></a>
