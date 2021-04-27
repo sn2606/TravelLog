@@ -14,11 +14,15 @@
 
 /************************************** NAVBAR CUSTOM ************************************************/
 .nav-wrapper {
-  position: relative !important;
+  /* position: relative !important; */
+  position: absolute!important;
+  top: 0;
 }
 
 nav {
-  position: relative !important;
+  /* position: relative !important; */
+  position: absolute!important;
+  top: 0;
 }
 
 .menu {
@@ -29,20 +33,16 @@ main {
   padding-top: 3%;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
-
 /************************************** TEXT CONTAINER **********************************************/
 .container {
   font-family: "Raleway", sans-serif;
   padding-top: 3%;
   padding-bottom: 3%;
-  position: relative;
-  /* height: 100vh; */
-  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  right: 30px;
+  overflow: auto;
   /* margin-top: 10%; */
 }
 
@@ -73,6 +73,145 @@ input[type="file"] {
 
 .media-body {
   margin-left: 10px;
+}
+
+/************************************** PROFILE CARD ***********************************************/
+/*Profile Card 5*/
+.profile-card-5 {
+  margin-top: 20px;
+}
+
+.profile-card-5 .btn {
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 7px 20px;
+}
+
+.btn :hover {
+  background-color: #330;
+  color: #eee !important;
+}
+
+.profile-card-5 .card-img-block {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+
+}
+
+.profile-card-5 .card-img-block img {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
+}
+
+.profile-card-5 h5 {
+  font-weight: 600;
+}
+
+.profile-card-5 p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/************************************* ACCEPT/DECLINE FRIEND REQUESTS ******************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+
+.panel-body {
+  box-sizing: border-box;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.friend-list {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.friend-requests {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.friend-box {
+  position: relative;
+  /* background-color: #eee; */
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.63);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.friend-profile {
+  float: left;
+  border-radius: 5px;
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 0px 15px #aaa;
+  margin-right: 3%;
+}
+
+.name-box {
+  text-align: left;
+  color: #4F7091;
+  font-size: 18px;
+}
+
+.user-name-box {
+  text-align: left;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.request-btn-row {
+  bottom: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.friend-request {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.decline-request {
+  display: flex;
+  background-color: #FF6666;
+  text-align: center;
+  color: #fff;
+}
+
+.decline-request:hover {
+  background-color: #993333;
+}
+
+.accept-request {
+  display: flex;
+  text-align: center;
+  background-color: #41c764;
+  color: #fff;
+}
+
+.accept-request:hover {
+  background-color: #419764;
+}
+
+.fr-request-pending {
+  position: relative;
+  top: -10px;
+  color: #17406f;
+  font-weight: bold;
+}
+
+.request-btn-row.disappear {
+  display: none;
 }
 
 /************************************** ONE POST CARD **********************************************/
@@ -146,8 +285,8 @@ input[type="file"] {
 
 .post .user .actions span {
   margin-right: 10px;
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
   float: left;
   display: block;
   cursor: pointer;
@@ -181,13 +320,13 @@ input[type="file"] {
 }
 
 .post .user .actions a i {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #del-this {
   width: 35px;
   height: 35px;
-  opacity: 0.9!important;
+  opacity: 0.9 !important;
   color: #eee;
 }
 
@@ -240,16 +379,16 @@ input[type="file"] {
   display: flex;
   color: #666;
   margin-left: 10px;
-  font-size: 16px!important;
+  font-size: 16px !important;
 }
 
 .card__footer__like {
-  font-size: 16px!important;
+  font-size: 16px !important;
 }
 
 .card__footer__comment {
   margin-left: 1em;
-  font-size: 16px!important;
+  font-size: 16px !important;
 }
 
 form button {

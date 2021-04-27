@@ -43,25 +43,43 @@
     <div class="row">
       <div class="col-md-3">
         <!-- profile brief -->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>swaranjana</h4>
-            <p>I love to code!</p>
+        <div class="card profile-card-5">
+          <div class="card-img-block">
+            <img class="card-img-top" src="https://images.pexels.com/photos/3042160/pexels-photo-3042160.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Card image cap">
+          </div>
+          <div class="card-body pt-0">
+            <h5 class="card-title">Melanie Hamilton</h5>
+            <p class="card-text">Exploring Ireland.</p>
+            <a href="#" class="btn">Go somewhere</a>
           </div>
         </div>
         <!-- ./profile brief -->
 
         <!-- friend requests -->
+        <hr>
         <div class="panel panel-default">
           <div class="panel-body">
-            <h4>friend requests</h4>
-            <ul>
+            <h4>Friend Requests</h4>
+            <!-- <ul>
               <li>
                 <a class="user" href="#">johndoe</a>
                 <a class="text-success" href="#">[accept]</a>
-                <a class="text-danger" href="#">[decline]</a>
-              </li>
-            </ul>
+                <a class="text-danger" href="#">[decline]</a> -->
+            <div class="friend-box">
+              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
+              <div class="name-box">
+                Awa L
+              </div>
+              <div class="user-name-box">
+                @awaaa sent you a friend request.
+              </div>
+              <div class="request-btn-row" data-username="purplekoala395">
+                <button class="friend-request accept-request" data-username="purplekoala395">Accept</button>
+                <button class="friend-request decline-request" data-username="purplekoala395">Decline</button>
+              </div>
+            </div>
+            <!-- </li>
+            </ul> -->
           </div>
         </div>
         <!-- ./friend requests -->
@@ -202,28 +220,54 @@
       <div class="col-md-3">
         <!-- add friend -->
         <div class="panel panel-default">
+          <h4>Add Friend</h4>
           <div class="panel-body">
-            <h4>add friend</h4>
-            <ul>
+            <!-- <ul>
               <li>
                 <a class="user" href="#">alberte</a>
                 <a class="text-success" href="#">[add]</a>
               </li>
-            </ul>
+            </ul> -->
+            <div class="friend-box">
+              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
+              <div class="name-box">
+                Awa L
+              </div>
+              <div class="user-name-box">
+                @awaaa sent you a friend request.
+              </div>
+              <div class="request-btn-row" data-username="purplekoala395">
+                <button class="friend-request accept-request" data-username="purplekoala395">Add</button>
+                <!-- <button class="friend-request decline-request" data-username="purplekoala395">Decline</button> -->
+              </div>
+            </div>
           </div>
         </div>
         <!-- ./add friend -->
 
         <!-- friends -->
         <div class="panel panel-default">
+          <h4>Friends</h4>
           <div class="panel-body">
-            <h4>friends</h4>
-            <ul>
+            <!-- <ul>
               <li>
                 <a class="user" href="#">peterpan</a>
                 <a class="text-danger" href="#">[unfriend]</a>
               </li>
-            </ul>
+            </ul> -->
+            <div class="friend-box">
+              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
+              <div class="name-box">
+                Awa L
+              </div>
+              <div class="user-name-box">
+                @awaaa sent you a friend request.
+              </div>
+              <div class="request-btn-row" data-username="purplekoala395">
+                <!-- <button class="friend-request accept-request" data-username="purplekoala395">Accept</button> -->
+                <button class="friend-request decline-request" data-username="purplekoala395">Remove</button>
+              </div>
+            </div>
           </div>
         </div>
         <!-- ./friends -->
@@ -231,12 +275,6 @@
     </div>
   </div>
   <!-- ./main -->
-
-  <?php
-  include "footer.php";
-  ?>
-
-
 </body>
 
 </html>
