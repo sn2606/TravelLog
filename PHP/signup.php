@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -19,46 +23,88 @@
 </head>
 
 <body>
-  <?php
-  require_once "functions.php";
-  ?>
-  <!-- background video -->
-  <video autoplay muted loop id="backgroundVideo" src="../Images/Background/campfire.mp4"></video>
-  <img src="../Images/Mobile-Background/pexels-alex-azabache-3214958.jpg" alt="Mobile-Image" id="backgroundImage">
+
+  <!-- background images -->
+  <img src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" id="backgroundVideo">
+  <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Mobile-Imange" id="backgroundImage">
 
   <!-- title of website -->
   <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
 
+  <?php
+  require_once "functions.php";
+  ?>
+
+  <?php
+  dbConnect();
+  if (isset($_POST['signup'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $cpassword = mysqli_real_escape_string($conn, $_POST['confirm']);
+
+    $pass = password_hash($password, PASSWORD_BCRYPT);
+    $cpass = password_hash($cpassword, PASSWORD_BCRYPT);
+
+    $emailquery = "SELECT * FROM users WHERE email = '$email'";
+    $emailres = $conn->query($emailquery);
+
+    $userquery = "SELECT * FROM users WHERE username = '$username'";
+    $userres = $conn->query($userquery);
+
+    if ($emailres->num_rows > 0) {
+      echo "Email already exists.";
+    } elseif ($userres->num_rows > 0) {
+      echo "User already exists.";
+    } else {
+      if ($password === $cpassword) {
+        $sql = "INSERT INTO users(name, email, username, password) VALUES('$name', '$email', '$username', '$pass')";
+        $result = $conn->query($sql);
+        redirect_to("login.php");
+      } else {
+        echo "Passwords not matching.";
+      }
+    }
+  }
+  ?>
+
   <!-- login form -->
-  <div class="login-box">
-    <h1>Sign Up</h1>
-    <div class="textbox">
-      <i class="fas fa-user"></i>
-      <input type="text" placeholder="Name" name="" id="">
-    </div>
-    <div class="textbox">
-      <i class="fas fa-envelope"></i>
-      <input type="email" placeholder="Email" name="" id="">
-    </div>
-    <div class="textbox">
-      <i class="fas fa-at"></i>
-      <input type="text" placeholder="Username" name="" id="">
-    </div>
-    <div class="textbox">
-      <i class="fas fa-key"></i>
-      <input type="password" placeholder="Password" name="" id="">
-    </div>
+  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="signup-form">
+    <div class="login-box">
+      <h1 id="sutext">Sign Up</h1>
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Name" name="name" id="name" required>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="Email" name="email" id="email" required>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-at"></i>
+        <input type="text" placeholder="Username" name="username" id="username" required>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-key"></i>
+        <input type="password" placeholder="Password" name="password" id="password" required>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-key"></i>
+        <input type="password" placeholder="Confirm Password" name="confirm" id="confirm" required>
+      </div>
 
-    <iframe id="t-and-c" src="terms-and-conditions.php" height="100" width="100%" title="Terms and Conditions"></iframe>
-    <input type="checkbox" name="Agree" value="Yes" required> <span class="Acc">I Agree to the Terms and Conditions.</span>
+      <iframe id="t-and-c" src="terms-and-conditions.php" height="100" width="100%" title="Terms and Conditions"></iframe>
+      <input type="checkbox" name="Agree" value="Yes" required> <span class="Acc">I Agree to the Terms and Conditions.</span>
 
-    <input onclick="location.href = 'homepage.php';" class="btn" type="submit" value="Sign Up">
-    <hr>
-    <div class="Acc">
-      Already have an account?
-      <a href="login.php">Login!</a>
+      <input class="btn" type="submit" value="Sign Up" name="signup">
+      <hr>
+      <div class="Acc">
+        Already have an account?
+        <a href="login.php">Login!</a>
+      </div>
     </div>
-  </div>
+  </form>
 </body>
 
 </html>
