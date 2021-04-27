@@ -66,6 +66,7 @@ session_start();
         echo "Passwords not matching.";
       }
     }
+    $conn->close();
   }
   ?>
 

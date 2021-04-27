@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -28,28 +32,66 @@
   <!-- title of website -->
   <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
 
-  <!-- login form -->
-  <div class="login-box">
-    <h1>Login</h1>
-    <div class="textbox">
-      <i class="fas fa-user"></i>
-      <input type="text" placeholder="Username" name="" id="">
-    </div>
-    <div class="textbox">
-      <i class="fas fa-key"></i>
-      <input type="password" placeholder="Password" name="" id="">
-    </div>
-    <div class="forgot-password">
-      <a href="#">Forgot Password?</a>
-    </div>
+  <?php
+  dbConnect();
 
-    <input onclick="location.href = 'homepage.php';" class="btn" type="button" value="Sign In">
-    <hr>
-    <div class="Acc">
-      Don't have an account?
-      <a href="signup.php">Create one!</a>
+  if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $userquery = "SELECT * FROM users WHERE username = '$username'";
+    $userres = $conn->query($userquery);
+
+    if (!$userres->num_rows) {
+      ?>
+      <p style='color:crimson;'>User does not exist.</p>
+      <?php
+    } else {
+      $userpass = $userres->fetch_assoc();
+      $db_pass = $userpass['password'];
+      $pass_decode = password_verify($password, $db_pass);
+
+      if($pass_decode){
+        $_SESSION['name'] = $userpass['name'];
+        $_SESSION['username'] = $username;
+        ?>
+            <script>
+              location.replace("homepage.php");
+            </script>
+
+        <?php
+
+      }else{
+        echo "Password Incorrect";
+      }
+    }
+  }
+  ?>
+
+  <!-- login form -->
+  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="login-form">
+    <div class="login-box">
+      <h1>Login</h1>
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" name="username" id="username" required>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-key"></i>
+        <input type="password" placeholder="Password" name="password" id="password" required>
+      </div>
+      <!-- <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div> -->
+
+      <input class="btn" type="submit" value="Sign In" name="login">
+      <hr>
+      <div class="Acc">
+        Don't have an account?
+        <a href="signup.php">Create one!</a>
+      </div>
     </div>
-  </div>
+  </form>
 
 </body>
 
