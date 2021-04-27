@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -86,6 +90,7 @@
       </div>
       <div class="col-md-6">
         <!-- post form -->
+        <p>Hello <?php echo $_SESSION['name'] ?></p>
         <form method="post" action="create-post.php" id="create-post" name="create-post" enctype="multipart/form-data">
           <div class="input-group">
             <input class="form-control" type="text" name="content" placeholder="Make a post...">
