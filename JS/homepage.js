@@ -19,8 +19,8 @@ hearts = ['url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOoAAADXCAMAAAAjrj
 ]
 
 var i = 0;
-document.getElementById("heart").onclick = function() {
+document.getElementsByClassName("heart").onclick = function() {
     i = (i == 0) ? 1 : 0;
-    document.getElementById("heart").style.backgroundImage = hearts[i];
+    document.getElementsByClassName("heart").style.backgroundImage = hearts[i];
 }
 
