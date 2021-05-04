@@ -199,12 +199,25 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>Friends</h4>
-            <ul>
+            <!-- <ul>
               <li>
-                <a href="#">peterpan</a>
+                <a class="user" href="#">peterpan</a>
                 <a class="text-danger" href="#">[unfriend]</a>
               </li>
-            </ul>
+            </ul> -->
+            <div class="friend-box">
+              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
+              <div class="name-box">
+                Awa L
+              </div>
+              <div class="user-name-box">
+                @awaaa sent you a friend request.
+              </div>
+              <div class="request-btn-row" data-username="purplekoala395">
+                <!-- <button class="friend-request accept-request" data-username="purplekoala395">Accept</button> -->
+                <button class="friend-request decline-request" data-username="purplekoala395">Unfriend</button>
+              </div>
+            </div>
           </div>
         </div>
         <!-- ./friends -->
