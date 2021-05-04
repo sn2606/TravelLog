@@ -19,7 +19,7 @@
     }
 
     function is_auth() {
-        return isset($_SESSION['user_id']);
+        return isset($_SESSION['userid']);
     }
     
     function check_auth() {
