@@ -45,7 +45,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>Edit profile</h4>
-            <form method="post" action="">
+            <form method="post" action="edit-profile.php">
               <div class="form-group">
                 <input class="form-control" type="text" name="status" placeholder="Status" value="">
               </div>
