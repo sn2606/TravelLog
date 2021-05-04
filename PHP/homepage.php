@@ -96,7 +96,13 @@ session_start();
             <input class="form-control" type="text" name="content" placeholder="Make a post...">
           </div>
           <br>
-          <p id="size-chk"></p>
+          <p id="size-chk">
+            <?php 
+            if($_SESSION['post-flag'] == 0) {
+              echo "Please create a valid post";
+            }
+            ?>
+          </p>
           <span class="input-group-btn">
             <label class="btn" type="button" for="get-photo">
               <input type="file" accept="image/*" name="get-photo" id="get-photo">

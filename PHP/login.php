@@ -50,6 +50,7 @@
       if($pass_decode){
         $_SESSION['name'] = $userpass['name'];
         $_SESSION['username'] = $username;
+        $_SESSION['post-flag'] = 1;
         ?>
             <script>
               location.replace("homepage.php");
