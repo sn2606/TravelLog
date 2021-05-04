@@ -2,7 +2,7 @@
     session_start();
     function dbConnect() {
         global $conn;
-        $dbServer = "localhost";
+        $dbServer = "localhost:3308";
         $username = "root";
         $password = "";
         $dbName = "travellog";

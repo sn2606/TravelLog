@@ -109,7 +109,7 @@ session_start();
         <!-- ./post form -->
 
         <!-- feed -->
-        <div>
+        <div class="scrollable">
           <!-- post -->
           <?php
           $sql = "SELECT * FROM posts ORDER BY created_at DESC";
@@ -222,7 +222,7 @@ session_start();
         </div>
         <!-- ./feed -->
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 right">
         <!-- add friend -->
         <div class="panel panel-default">
           <h4>Add Friend</h4>
