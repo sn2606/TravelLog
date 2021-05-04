@@ -52,9 +52,9 @@ session_start();
             <img class="card-img-top" src="https://images.pexels.com/photos/3042160/pexels-photo-3042160.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Card image cap">
           </div>
           <div class="card-body pt-0">
-            <h5 class="card-title">Melanie Hamilton</h5>
+            <h5 class="card-title"><?php echo $_SESSION['name'] ?></h5>
             <p class="card-text">Exploring Ireland.</p>
-            <a href="#" class="btn">Go somewhere</a>
+            <a href="profile.php?username=<?php echo $_SESSION['username'] ?>" class="btn">Profile</a>
           </div>
           <hr>
         </div>
@@ -168,10 +168,10 @@ session_start();
                   <!-- how many likes and comments -->
                   <div class="card__footer">
                     <span class="card__footer__like">
-                      <i class="far fa-heart"></i> 13
+                      <i class="far fa-heart"></i> <?php echo $post['likes'] ?>
                     </span>
                     <span class="card__footer__comment" id="comment-icon">
-                      <i class="far fa-comment"></i> 2
+                      <i class="far fa-comment"></i> <?php echo $post['comments'] ?>
                     </span>
                   </div>
 

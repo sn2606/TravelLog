@@ -51,7 +51,7 @@
         $_SESSION['name'] = $userpass['name'];
         $_SESSION['username'] = $username;
         $_SESSION['post-flag'] = 1;
-        $_SESSION['userid'] = $userres['user_id'];
+        $_SESSION['userid'] = $userpass['user_id'];
         ?>
             <script>
               location.replace("homepage.php");
