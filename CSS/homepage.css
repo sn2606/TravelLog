@@ -90,6 +90,7 @@ input[type="file"] {
 /************************************** PROFILE CARD ***********************************************/
 /*Profile Card 5*/
 .profile-card-5 {
+  display: flex;
   margin-top: 20px;
 }
 
@@ -132,6 +133,8 @@ input[type="file"] {
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 
 .panel-body {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   margin-top: 10%;
   margin-bottom: 5%;
@@ -371,6 +374,20 @@ input[type="file"] {
 }
 
 @media only screen and (max-width: 720px) {
+  .profile-card-5 {
+    display: none;
+  }
+
+  .panel-body {
+    display: none;
+  }
+
+  .col-md-6 {
+    top: 50px;
+    left: 0;
+    width: 80%;
+  }
+
   .post .user {
     flex-direction: column;
   }

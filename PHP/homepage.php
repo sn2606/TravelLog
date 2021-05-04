@@ -56,11 +56,11 @@ session_start();
             <p class="card-text">Exploring Ireland.</p>
             <a href="#" class="btn">Go somewhere</a>
           </div>
+          <hr>
         </div>
         <!-- ./profile brief -->
 
         <!-- friend requests -->
-        <hr>
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>Friend Requests</h4>
@@ -97,10 +97,11 @@ session_start();
           </div>
           <br>
           <p id="size-chk">
-            <?php 
-            if($_SESSION['post-flag'] == 0) {
+            <?php
+            if ($_SESSION['post-flag'] == 0) {
               echo "Please create a valid post";
             }
+            $_SESSION['post-flag'] = 1;
             ?>
           </p>
           <span class="input-group-btn">
@@ -231,8 +232,8 @@ session_start();
       <div class="col-md-3 right">
         <!-- add friend -->
         <div class="panel panel-default">
-          <h4>Add Friend</h4>
           <div class="panel-body">
+            <h4>Add Friend</h4>
             <!-- <ul>
               <li>
                 <a class="user" href="#">alberte</a>
@@ -258,8 +259,8 @@ session_start();
 
         <!-- friends -->
         <div class="panel panel-default">
-          <h4>Friends</h4>
           <div class="panel-body">
+            <h4>Friends</h4>
             <!-- <ul>
               <li>
                 <a class="user" href="#">peterpan</a>
