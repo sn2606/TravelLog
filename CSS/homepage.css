@@ -20,7 +20,7 @@ body {
 /************************************** NAVBAR CUSTOM ************************************************/
 .nav-wrapper {
   /* position: relative !important; */
-  position: fixed!important;
+  position: absolute!important;
   display: block;
   /* overflow: hidden; */
   top: 0;
@@ -73,6 +73,11 @@ input[type="file"] {
   margin: 0;
 }
 
+.btn :hover {
+  /* color: #fff !important; */
+  background-color: #ccc !important;
+}
+
 .container hr {
   background-color: #333;
   margin-bottom: 0px;
@@ -86,7 +91,6 @@ input[type="file"] {
 /*Profile Card 5*/
 .profile-card-5 {
   margin-top: 20px;
-  position: sticky;
 }
 
 .profile-card-5 .btn {
@@ -223,29 +227,6 @@ input[type="file"] {
 }
 
 /************************************** ONE POST CARD **********************************************/
-
-/* .col-md-6 {
-  position: absolute;
-  left: 30%;
-  right: 30%;
-  width: 40%;
-} */
-
-/* .right {
-  position: absolute;
-  right: 1%;
-} */
-
-/* .scrollable {
-  position: absolute;
-  overflow-y: scroll;
-  top: 20%;
-}
-
-#create-post {
-  position: fixed;
-  width: 43%;
-} */
 
 #main-window {
   margin: auto;

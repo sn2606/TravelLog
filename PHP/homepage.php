@@ -38,9 +38,9 @@ session_start();
   ?>
 
   <!-- map for usemap of Logo-Img -->
-  <map name="home">
+  <!-- <map name="home">
     <area shape="default" coords="21,21,21" href="../index.php" alt="Home Page">
-  </map>
+  </map> -->
 
   <!-- main -->
   <div class="container">
