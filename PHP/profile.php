@@ -21,7 +21,21 @@
   <?php
   require_once "functions.php";
   include "header.php";
+  // dbConnect();
   ?>
+
+  <?php
+  check_auth();
+  dbConnect();
+
+  $sql = "SELECT user_id, name, username, status, profile_img_url, location FROM users WHERE username = ?";
+  $statement = $conn->prepare($sql);
+  $statement->bind_param('s', $_GET['username']);
+  $statement->execute();
+  $statement->store_result();
+  $statement->bind_result($id, $name, $username, $status, $profile_image_url, $location);
+  $statement->fetch();
+  ?>>
 
   <!-- main -->
   <main class="container">
@@ -55,8 +69,9 @@
             <img src="../Images/Background/pexels-dominika-roseclay-1252500.jpg" class="media-object" style="width: 128px; height: 128px;">
           </div>
           <div class="media-body">
-            <h2 class="media-heading">swaranjana</h2>
-            <p>Status: I love to code!, Location: India</p>
+            <h2 class="media-heading"><?php echo $name ?></h2>
+            <h4><?php echo "@$username" ?></h4>
+            <p>Status: <?php echo $status ?><br>Location: <?php echo $location ?></p>
           </div>
         </div>
         <!-- user profile -->
@@ -64,21 +79,121 @@
         <hr>
 
         <!-- timeline -->
-        <div>
+        <!-- feed -->
+        <div class="scrollable">
           <!-- post -->
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <p>Hello people! This is my first TravelLog post. Hurray!!!</p>
-            </div>
-            <div class="panel-footer">
-              <span>posted 2021-4-21 20:45:01 by swaranjana</span>
-              <span class="pull-right"><a class="text-danger" href="#">[delete]</a></span>
-            </div>
-          </div>
+          <?php
+          $user_posts_sql = "SELECT * FROM posts WHERE user_id = {$id} ORDER BY created_at DESC";
+          $result = $conn->query($user_posts_sql);
+
+          if ($result->num_rows > 0) {
+            while ($post = $result->fetch_assoc()) {
+          ?>
+              <!-- One Post -->
+              <div id="main-window">
+                <div class="post">
+                  <div class="user">
+                    <div class="user-stuff">
+                      <div class="user-img"></div>
+                      <div class="user-info">
+                        <div class="user-name">Louis Dickinson</div>
+                        <span class="post-date"><?php echo $post['created_at']; ?></span>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <span id="heart" class="heart"></span>
+                      <span class="comment"></span>
+                      <span class="share"></span>
+                      <form method="post" action="delete-post.php" id="delete-post" name="delete-post">
+                        <?php
+                        global $post_id;
+                        $post_id = $post['post_id'];
+                        ?>
+                        <span>
+                          <!-- <label for="delete">
+                            <input type="submit" id="del-this" name="delete" value="Del" class="btn"> -->
+                          <a class="text-danger" href="delete-post.php?id=<?php echo $post['post_id']; ?>">
+                            <i class="far fa-trash-alt"></i>
+                          </a>
+                          <!-- </label> -->
+                        </span>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <?php
+                    if ($post['content_img'] != NULL) {
+                      echo '<img src="data:image/jpeg;base64,' . base64_encode($post['content_img']) . '"/>';
+                    }
+                    echo $post['content'];
+                    ?>
+                  </div>
+
+                  <!-- how many likes and comments -->
+                  <div class="card__footer">
+                    <span class="card__footer__like">
+                      <i class="far fa-heart"></i> <?php echo $post['likes'] ?>
+                    </span>
+                    <span class="card__footer__comment" id="comment-icon">
+                      <i class="far fa-comment"></i> <?php echo $post['comments'] ?>
+                    </span>
+                  </div>
+
+                  <!-- comments section -->
+                  <div class="comments-section" comments>
+                    <!-- comment form -->
+                    <form class="clearfix" action="index.php" method="post" id="comment_form">
+                      <h6>Post a comment:</h6>
+                      <textarea name="comment_text" id="comment_text" class="form-control" cols="30" rows="3"></textarea>
+                      <button class="btn btn-primary btn-sm pull-right" id="submit_comment">Submit comment</button>
+                    </form>
+
+                    <!-- Display total number of comments on this post  -->
+                    <hr>
+                    <!-- comments wrapper -->
+                    <div id="comments-wrapper">
+                      <div class="comment clearfix">
+                        <img src="../Images/traveller.png" alt="" class="profile_pic">
+                        <div class="comment-details">
+                          <span class="comment-name">Melvine</span>
+                          <span class="comment-date">Apr 25, 2021</span>
+                          <p>Beautiful!</p>
+                          <a class="reply-btn" href="#">reply</a>
+                        </div>
+                        <div>
+                          <!-- reply -->
+                          <div class="comment reply clearfix">
+                            <img src="../Images/traveller.png" alt="" class="profile_pic">
+                            <div class="comment-details">
+                              <span class="comment-name">Louis Dickinson</span>
+                              <span class="comment-date">Apr 25, 2021</span>
+                              <p>Thank you!</p>
+                              <a class="reply-btn" href="#">reply</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // comments wrapper -->
+                  </div>
+                  <!-- // comments section -->
+
+                </div>
+              </div>
+            <?php
+            }
+          } else {
+            ?>
+            <p class="text-center">No posts yet!</p>
+          <?php
+          }
+          $conn->close();
+          ?>
           <!-- ./post -->
         </div>
-        <!-- ./timeline -->
+        <!-- ./feed -->
       </div>
+      <!-- ./timeline -->
       <div class="col-md-3">
         <!-- friends -->
         <div class="panel panel-default">
