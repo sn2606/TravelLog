@@ -56,7 +56,17 @@ session_start();
           </div>
           <div class="card-body pt-0">
             <h5 class="card-title"><?php echo $_SESSION['name'] ?></h5>
-            <p class="card-text">Exploring Ireland.</p>
+            <?php
+            $sql = "SELECT status FROM users WHERE username = ?";
+            $statement = $conn->prepare($sql);
+            $statement->bind_param('s', $_SESSION['username']);
+            $statement->execute();
+            $statement->store_result();
+            $statement->bind_result($status);
+            $statement->fetch();
+            echo "@" . $_SESSION['username'];
+            ?>
+            <p class="card-text"><?php echo $status ?></p>
             <a href="profile.php?username=<?php echo $_SESSION['username'] ?>" class="btn">Profile</a>
           </div>
           <hr>

@@ -36,7 +36,7 @@
   $statement->store_result();
   $statement->bind_result($id, $name, $username, $status, $profile_image_url, $location);
   $statement->fetch();
-  ?>>
+  ?>
 
   <!-- main -->
   <main class="container">
