@@ -1,0 +1,110 @@
+
+/************************************* ACCEPT/DECLINE FRIEND REQUESTS ******************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+
+.profile-links {
+    color: #333;
+    text-decoration: none;
+}
+
+.profile-links :hover {
+    text-decoration: none!important;
+    color: #333!important;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.friend-list {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.friend-requests {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.friend-box {
+  position: relative;
+  /* background-color: #eee; */
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.63);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.friend-profile {
+  float: left;
+  border-radius: 5px;
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 0px 15px #aaa;
+  margin-right: 3%;
+}
+
+.name-box {
+  text-align: left;
+  color: #4F7091;
+  font-size: 18px;
+}
+
+.user-name-box {
+  text-align: left;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.request-btn-row {
+  bottom: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.friend-request {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.decline-request {
+  display: flex;
+  background-color: #FF6666;
+  text-align: center;
+  color: #fff;
+}
+
+.decline-request:hover {
+  background-color: #993333;
+}
+
+.accept-request {
+  display: flex;
+  text-align: center;
+  background-color: #41c764;
+  color: #fff;
+}
+
+.accept-request:hover {
+  background-color: #419764;
+}
+
+.fr-request-pending {
+  position: relative;
+  top: -10px;
+  color: #17406f;
+  font-weight: bold;
+}
+
+.request-btn-row.disappear {
+  display: none;
+}
