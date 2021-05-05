@@ -23,10 +23,10 @@ session_start();
   <link rel="stylesheet" href="../CSS/post.css">
   <link rel="stylesheet" href="../CSS/friend.css">
   <!-- custom js -->
-  <script src="../JS/scroll-homepage.js" defer></script>
+  <!-- <script src="../JS/scroll-homepage.js" defer></script> -->
   <script src="../JS/homepage.js" defer></script>
   <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- google fonts and fontawesome -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
@@ -140,16 +140,13 @@ session_start();
         <?php
         dbConnect();
         $sql = "SELECT user_id, name, username, 
-        (SELECT friend_id FROM friend_requests 
-        WHERE friend_requests.user_id = {$_SESSION['userid']} AND
-        friend_requests.friend_id = users.user_id) AS sent_request,
-        (SELECT COUNT(*) FROM friends 
-        WHERE friends.user_id = users.user_id AND 
-        friends.friend_id = {$_SESSION['userid']}) AS is_friend 
-        FROM users 
-        WHERE user_id != {$_SESSION['userid']} AND (user_id NOT IN sent_request)
+        (SELECT COUNT(*) FROM friends WHERE friends.user_id = users.user_id AND friends.friend_id = {$_SESSION['userid']}) 
+        AS is_friend FROM users WHERE user_id != {$_SESSION['userid']} 
+         
         HAVING is_friend = 0 LIMIT 3";
         require_once "disp-add-friend.php";
+        // AND (user_id NOT IN (SELECT friend_id FROM friend_requests WHERE friend_requests.user_id = {$_SESSION['userid']} AND friend_requests.friend_id = users.user_id)) 
+        // AND (user_id NOT IN (SELECT user_id FROM friend_requests WHERE friend_requests.user_id = users.user_id AND friend_requests.friend_id = {$_SESSION['userid']}))
         dispAddFriends($sql, $conn);
         ?>
 
