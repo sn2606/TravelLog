@@ -142,11 +142,11 @@ session_start();
         $sql = "SELECT user_id, name, username, 
         (SELECT COUNT(*) FROM friends WHERE friends.user_id = users.user_id AND friends.friend_id = {$_SESSION['userid']}) 
         AS is_friend FROM users WHERE user_id != {$_SESSION['userid']} 
-         
+        AND (user_id NOT IN (SELECT friend_id FROM friend_requests WHERE friend_requests.user_id = {$_SESSION['userid']} AND friend_requests.friend_id = users.user_id)) 
+        AND (user_id NOT IN (SELECT user_id FROM friend_requests WHERE friend_requests.user_id = users.user_id AND friend_requests.friend_id = {$_SESSION['userid']}))        
         HAVING is_friend = 0 LIMIT 3";
+
         require_once "disp-add-friend.php";
-        // AND (user_id NOT IN (SELECT friend_id FROM friend_requests WHERE friend_requests.user_id = {$_SESSION['userid']} AND friend_requests.friend_id = users.user_id)) 
-        // AND (user_id NOT IN (SELECT user_id FROM friend_requests WHERE friend_requests.user_id = users.user_id AND friend_requests.friend_id = {$_SESSION['userid']}))
         dispAddFriends($sql, $conn);
         ?>
 

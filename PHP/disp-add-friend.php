@@ -8,8 +8,7 @@ function dispAddFriends($sql, $conn)
         <div class="panel panel-default">
             <div class="panel-body">
                 <?php
-                while ($result) {
-                    $tuser = $result->fetch_assoc();
+                while ($tuser = $result->fetch_assoc()) {
                 ?>
                     <!-- add friend -->
 
@@ -33,6 +32,7 @@ function dispAddFriends($sql, $conn)
                             </a>
                         </div>
                     </div>
+                    <br>
 
                 <?php
                 }
