@@ -21,6 +21,7 @@ session_start();
   <!-- custom css -->
   <link rel="stylesheet" href="../CSS/homepage.css">
   <link rel="stylesheet" href="../CSS/post.css">
+  <link rel="stylesheet" href="../CSS/friend.css">
   <!-- custom js -->
   <script src="../JS/scroll-homepage.js" defer></script>
   <script src="../JS/homepage.js" defer></script>
@@ -77,11 +78,6 @@ session_start();
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>Friend Requests</h4>
-            <!-- <ul>
-              <li>
-                <a class="user" href="#">johndoe</a>
-                <a class="text-success" href="#">[accept]</a>
-                <a class="text-danger" href="#">[decline]</a> -->
             <div class="friend-box">
               <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
               <div class="name-box">
@@ -95,8 +91,6 @@ session_start();
                 <button class="friend-request decline-request" data-username="purplekoala395">Decline</button>
               </div>
             </div>
-            <!-- </li>
-            </ul> -->
           </div>
         </div>
         <!-- ./friend requests -->
@@ -141,32 +135,25 @@ session_start();
         <!-- ./feed -->
       </div>
       <div class="col-md-3 right">
-        <!-- add friend -->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>Add Friend</h4>
-            <!-- <ul>
-              <li>
-                <a class="user" href="#">alberte</a>
-                <a class="text-success" href="#">[add]</a>
-              </li>
-            </ul> -->
-            <div class="friend-box">
-              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
-              <div class="name-box">
-                Awa L
-              </div>
-              <div class="user-name-box">
-                @awaaa sent you a friend request.
-              </div>
-              <div class="request-btn-row" data-username="purplekoala395">
-                <button class="friend-request accept-request" data-username="purplekoala395">Add</button>
-                <!-- <button class="friend-request decline-request" data-username="purplekoala395">Decline</button> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- ./add friend -->
+        <!-- add friends -->
+        <h4>Add Friend</h4>
+        <?php
+        dbConnect();
+        $sql = "SELECT user_id, name, username, 
+        (SELECT friend_id FROM friend_requests 
+        WHERE friend_requests.user_id = {$_SESSION['userid']} AND
+        friend_requests.friend_id = users.user_id) AS sent_request,
+        (SELECT COUNT(*) FROM friends 
+        WHERE friends.user_id = users.user_id AND 
+        friends.friend_id = {$_SESSION['userid']}) AS is_friend 
+        FROM users 
+        WHERE user_id != {$_SESSION['userid']} AND (user_id NOT IN sent_request)
+        HAVING is_friend = 0 LIMIT 3";
+        require_once "disp-add-friend.php";
+        dispAddFriends($sql, $conn);
+        ?>
+
+        <!-- add friends -->
 
         <!-- friends -->
         <div class="panel panel-default">
