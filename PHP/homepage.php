@@ -75,24 +75,20 @@ session_start();
         <!-- ./profile brief -->
 
         <!-- friend requests -->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>Friend Requests</h4>
-            <div class="friend-box">
-              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
-              <div class="name-box">
-                Awa L
-              </div>
-              <div class="user-name-box">
-                @awaaa sent you a friend request.
-              </div>
-              <div class="request-btn-row" data-username="purplekoala395">
-                <button class="friend-request accept-request" data-username="purplekoala395">Accept</button>
-                <button class="friend-request decline-request" data-username="purplekoala395">Decline</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h4>Friend Requests</h4>
+        <?php
+        dbConnect();
+        $sql = "SELECT * FROM users,friend_requests WHERE friend_id = {$_SESSION['userid']} 
+        AND users.user_id = friend_requests.user_id";
+
+        require_once "disp-friend-box.php";
+        // mode is how to display the box
+        // 1 - Add friend (send request)
+        // 2 - Accept / Decline friend requests
+        // 3 - Remove existing friends
+        $mode = 2;
+        dispFriendBox($sql, $conn, $mode);
+        ?>
         <!-- ./friend requests -->
       </div>
       <div class="col-md-6">
@@ -146,8 +142,13 @@ session_start();
         AND (user_id NOT IN (SELECT user_id FROM friend_requests WHERE friend_requests.user_id = users.user_id AND friend_requests.friend_id = {$_SESSION['userid']}))        
         HAVING is_friend = 0 LIMIT 3";
 
-        require_once "disp-add-friend.php";
-        dispAddFriends($sql, $conn);
+        require_once "disp-friend-box.php";
+        // mode is how to display the box
+        // 1 - Add friend (send request)
+        // 2 - Accept / Decline friend requests
+        // 3 - Remove existing friends
+        $mode = 1;
+        dispFriendBox($sql, $conn, $mode);
         ?>
 
         <!-- add friends -->

@@ -1,5 +1,5 @@
 <?php
-function dispAddFriends($sql, $conn)
+function dispFriendBox($sql, $conn, $mode)
 {
     $result = $conn->query($sql);
 
@@ -27,9 +27,30 @@ function dispAddFriends($sql, $conn)
                             </a>
                         </div>
                         <div class="request-btn-row">
-                            <a href="add-friend.php?uid=<?php echo $tuser['user_id'] ?>">
-                                <button class="friend-request accept-request">Add</button>
-                            </a>
+                            <?php
+                            if ($mode === 1) {
+                            ?>
+                                <a href="add-friend.php?uid=<?php echo $tuser['user_id'] ?>">
+                                    <button class="friend-request accept-request">Add</button>
+                                </a>
+                            <?php
+                            } elseif ($mode === 2) {
+                            ?>
+                                <a href="accept-request.php?uid=<?php echo $tuser['user_id'] ?>">
+                                    <button class="friend-request accept-request">Accept</button>
+                                </a>
+                                <a href="decline-request.php?uid=<?php echo $tuser['user_id'] ?>">
+                                    <button class="friend-request accept-request">Decline</button>
+                                </a>
+                            <?php
+                            } elseif ($mode === 3) {
+                            ?>
+                                <a href="remove-friend.php?uid=<?php echo $tuser['user_id'] ?>">
+                                    <button class="friend-request accept-request">Remove</button>
+                                </a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <br>
@@ -44,6 +65,8 @@ function dispAddFriends($sql, $conn)
 
     <?php
     } else {
-    ?><p class="text-center">No users to add!</p><?php
-                                                }
-                                            }
+    ?>
+    <p class="text-center">No users to add!</p>
+    <?php
+    }
+}
