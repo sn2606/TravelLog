@@ -40,13 +40,13 @@ function dispFriendBox($sql, $conn, $mode)
                                     <button class="friend-request accept-request">Accept</button>
                                 </a>
                                 <a href="decline-request.php?uid=<?php echo $tuser['user_id'] ?>">
-                                    <button class="friend-request accept-request">Decline</button>
+                                    <button class="friend-request decline-request">Decline</button>
                                 </a>
                             <?php
                             } elseif ($mode === 3) {
                             ?>
                                 <a href="remove-friend.php?uid=<?php echo $tuser['user_id'] ?>">
-                                    <button class="friend-request accept-request">Remove</button>
+                                    <button class="friend-request decline-request">Remove</button>
                                 </a>
                             <?php
                             }
