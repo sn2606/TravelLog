@@ -79,7 +79,7 @@ session_start();
         <?php
         dbConnect();
         $sql = "SELECT * FROM users,friend_requests WHERE friend_id = {$_SESSION['userid']} 
-        AND users.user_id = friend_requests.user_id";
+        AND users.user_id = friend_requests.user_id LIMIT 3";
 
         require_once "disp-friend-box.php";
         // mode is how to display the box
