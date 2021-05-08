@@ -24,7 +24,7 @@
     <div class="container">
       <!-- contact information of the company -->
       <div class="contact-info">
-        <a href="../index.php">
+        <a href="../index.html">
           <h2>TRAVELLOG</h2>
         </a>
         <div class="box">

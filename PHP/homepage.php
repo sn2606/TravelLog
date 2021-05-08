@@ -43,7 +43,7 @@ session_start();
 
   <!-- map for usemap of Logo-Img -->
   <!-- <map name="home">
-    <area shape="default" coords="21,21,21" href="../index.php" alt="Home Page">
+    <area shape="default" coords="21,21,21" href="../index.html" alt="Home Page">
   </map> -->
 
   <!-- main -->

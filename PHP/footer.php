@@ -25,7 +25,7 @@
   <footer class="footer-distributed">
     <div class="footer-top">
       <p class="footer-links">
-        <a href="about-us.php">About Us</a>
+        <a href="../about-us.html">About Us</a>
         <a href="contact-us.php">Contact Us</a>
       </p>
     </div>

@@ -24,7 +24,7 @@
         <nav class="navbar" id="header">
             <div class="Logo">
                 <img src="../Images/mountain.png" class="Logo-Img" alt="Alps-Logo" usemap="#home">
-                <a href="../index.php"><span class="Logo-Text">TRAVELLOG</span></a>
+                <a href="../index.html"><span class="Logo-Text">TRAVELLOG</span></a>
             </div>
             <div class="navigation">
                 <ul class="menu">
@@ -43,7 +43,7 @@
                         <a href="logout.php"><span class="menu-text">Sign Out</span></a>
                     </div>
                     <div class="sign-out-mobile">
-                        <a href="../index.php"><i class="fas fa-sign-out-alt"></i></a>
+                        <a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
                     </div>
                 </div>
             </div>

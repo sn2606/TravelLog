@@ -26,12 +26,12 @@
   <video autoplay muted loop src="https://player.vimeo.com/external/504717899.sd.mp4?s=f97ae0cbf3dab49c7ddedcbef15346dcac089cdf&profile_id=165&oauth2_token_id=57447761" alt="Mobile-Image" id="backgroundImage"></video>
 
   <!-- title of website -->
-  <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
+  <div class="Site-Title"><a href="../index.html" class="Text">TRAVELLOG</a></div>
 
   <?php
   dbConnect();
 
-  if(isset($_POST['login'])){
+  if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -39,7 +39,7 @@
     $userres = $conn->query($userquery);
 
     if (!$userres->num_rows) {
-      ?>
+  ?>
       <p style='color:crimson;'>User does not exist.</p>
       <?php
     } else {
@@ -47,19 +47,19 @@
       $db_pass = $userpass['password'];
       $pass_decode = password_verify($password, $db_pass);
 
-      if($pass_decode){
+      if ($pass_decode) {
         $_SESSION['name'] = $userpass['name'];
         $_SESSION['username'] = $username;
         $_SESSION['post-flag'] = 1;
         $_SESSION['userid'] = $userpass['user_id'];
-        ?>
-            <script>
-              location.replace("homepage.php");
-            </script>
+      ?>
+        <script>
+          location.replace("homepage.php");
+        </script>
 
-        <?php
+  <?php
 
-      }else{
+      } else {
         echo "Password Incorrect";
       }
     }

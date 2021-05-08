@@ -25,7 +25,7 @@
   <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Mobile-Imange" id="backgroundImage">
 
   <!-- title of website -->
-  <div class="Site-Title"><a href="../index.php" class="Text">TRAVELLOG</a></div>
+  <div class="Site-Title"><a href="../index.html" class="Text">TRAVELLOG</a></div>
 
   <?php
   require_once "functions.php";
