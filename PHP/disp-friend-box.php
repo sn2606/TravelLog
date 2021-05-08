@@ -66,7 +66,7 @@ function dispFriendBox($sql, $conn, $mode)
     <?php
     } else {
     ?>
-    <p class="text-center">No users to add!</p>
+    <p class="text-center">Nothing to display yet!</p>
     <?php
     }
 }
