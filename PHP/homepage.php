@@ -39,6 +39,7 @@ session_start();
   require_once "functions.php";
   require "header.php";
   dbConnect();
+  check_auth();
   ?>
 
   <!-- map for usemap of Logo-Img -->
