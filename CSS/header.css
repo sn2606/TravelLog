@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-size: 12px;
+    font-family: "Raleway", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -112,7 +113,7 @@ nav {
 /***************************************** NAVBAR NOTIFICATION SECTION *********************************************/
 
 .dropdown-menu {
-    width: 100% !important;
+    width: 250px !important;
 }
 
 a.dropdown-menu-header:hover {
@@ -130,6 +131,7 @@ a.dropdown-menu-header {
 
 .dropdown-menu li {
     padding: 10px;
+    /* margin-left: 10px; */
 }
 
 
