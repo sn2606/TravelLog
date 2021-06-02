@@ -1,5 +1,5 @@
 <?php
-function displayPosts($sql, $conn)
+function displayPosts($sql, $conn, $num)
 {
     $result = $conn->query($sql);
 
@@ -17,9 +17,12 @@ function displayPosts($sql, $conn)
                                 <span class="post-date"><?php echo $post['created_at']; ?></span>
                             </div>
                         </div>
+                        <?php 
+                        if($num === 1) {
+                        ?>
                         <div class="actions">
-                            <span id="heart" class="heart"></span>
-                            <span class="comment"></span>
+                            <!-- <span id="heart" class="heart"></span>
+                            <span class="comment"></span> -->
                             <span class="share"></span>
                             <form method="post" action="delete-post.php" id="delete-post" name="delete-post">
                                 <?php
@@ -36,6 +39,7 @@ function displayPosts($sql, $conn)
                                 </span>
                             </form>
                         </div>
+                        <?php } ?>
                     </div>
                     <div class="content">
                         <?php
@@ -47,28 +51,28 @@ function displayPosts($sql, $conn)
                     </div>
 
                     <!-- how many likes and comments -->
-                    <div class="card__footer">
+                    <!-- <div class="card__footer">
                         <span class="card__footer__like">
-                            <i class="far fa-heart"></i> <?php echo $post['likes'] ?>
+                            <i class="far fa-heart"></i> 
                         </span>
                         <span class="card__footer__comment" id="comment-icon">
-                            <i class="far fa-comment"></i> <?php echo $post['comments'] ?>
+                            <i class="far fa-comment"></i> 
                         </span>
-                    </div>
+                    </div> -->
 
                     <!-- comments section -->
-                    <div class="comments-section" comments>
+                    <!-- <div class="comments-section" comments> -->
                         <!-- comment form -->
-                        <form class="clearfix" action="index.php" method="post" id="comment_form">
+                        <!-- <form class="clearfix" action="index.php" method="post" id="comment_form">
                             <h6>Post a comment:</h6>
                             <textarea name="comment_text" id="comment_text" class="form-control" cols="30" rows="3"></textarea>
                             <button class="btn btn-primary btn-sm pull-right" id="submit_comment">Submit comment</button>
-                        </form>
+                        </form> -->
 
                         <!-- Display total number of comments on this post  -->
-                        <hr>
+                        <!-- <hr> -->
                         <!-- comments wrapper -->
-                        <div id="comments-wrapper">
+                        <!-- <div id="comments-wrapper">
                             <div class="comment clearfix">
                                 <img src="../Images/traveller.png" alt="" class="profile_pic">
                                 <div class="comment-details">
@@ -77,9 +81,9 @@ function displayPosts($sql, $conn)
                                     <p>Beautiful!</p>
                                     <a class="reply-btn" href="#">reply</a>
                                 </div>
-                                <div>
+                                <div> -->
                                     <!-- reply -->
-                                    <div class="comment reply clearfix">
+                                    <!-- <div class="comment reply clearfix">
                                         <img src="../Images/traveller.png" alt="" class="profile_pic">
                                         <div class="comment-details">
                                             <span class="comment-name">Louis Dickinson</span>
@@ -90,9 +94,9 @@ function displayPosts($sql, $conn)
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- // comments wrapper -->
-                    </div>
+                    <!-- </div> -->
                     <!-- // comments section -->
 
                 </div>

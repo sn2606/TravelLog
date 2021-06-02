@@ -109,6 +109,12 @@ nav {
     flex-direction: row;
 }
 
+/***************************************** NAVBAR NOTIFICATION SECTION *********************************************/
+.dropdown-menu li {
+    padding: 10px;
+}
+
+
 /****************************************** NAVBAR SEARCH SECTION STYLE ********************************************/
 .search {
     position: relative;

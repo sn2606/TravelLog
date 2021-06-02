@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -29,7 +30,18 @@
             <div class="navigation">
                 <ul class="menu">
                     <li><a href="homepage.php?username=<?php echo $_SESSION['username'] ?>"><i class="fas fa-home"></i></a></li>
-                    <li><a href="#"><i class="fas fa-bell"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>Action</li>
+                            <li>Another action</li>
+                            <li>Something else here</li>
+                            <li role="separator" class="divider"></li>
+                            <li>Separated link</li>
+                            <li role="separator" class="divider"></li>
+                            <li>One more separated link</li>
+                        </ul>
+                    </li>
                     <li><a href="profile.php?username=<?php echo $_SESSION['username'] ?>"><i class="fas fa-user-alt"></i></a></li>
                 </ul>
                 <div class="not-menu">

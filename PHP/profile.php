@@ -86,7 +86,7 @@
           <?php
           $user_posts_sql = "SELECT * FROM posts WHERE user_id = {$id} ORDER BY created_at DESC";
           require "post.php";
-          displayPosts($user_posts_sql, $conn);
+          displayPosts($user_posts_sql, $conn, 1);
           ?>
         </div>
         <!-- ./feed -->
