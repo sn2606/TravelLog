@@ -33,12 +33,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i></a>
                         <ul class="dropdown-menu">
+                            <li role="presentation">
+                                <a href="#" class="dropdown-menu-header">Notifications</a>
+                            </li>
                             <li>Action</li>
                             <li>Another action</li>
                             <li>Something else here</li>
-                            <li role="separator" class="divider"></li>
                             <li>Separated link</li>
-                            <li role="separator" class="divider"></li>
                             <li>One more separated link</li>
                         </ul>
                     </li>

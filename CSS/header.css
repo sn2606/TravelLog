@@ -110,6 +110,24 @@ nav {
 }
 
 /***************************************** NAVBAR NOTIFICATION SECTION *********************************************/
+
+.dropdown-menu {
+    width: 100% !important;
+}
+
+a.dropdown-menu-header:hover {
+    background-color: #e6e6e6 !important;
+}
+
+a.dropdown-menu-header {
+    background: #f7f9fe;
+    font-weight: bold;
+    border-bottom: 1px solid #e3e3e3;
+}
+/* .dropdown-menu > li a {
+    padding: 10px;
+} */
+
 .dropdown-menu li {
     padding: 10px;
 }
