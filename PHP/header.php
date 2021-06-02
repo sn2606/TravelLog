@@ -39,7 +39,7 @@
                             <?php
                             dbConnect();
                             $id = $_SESSION['userid'];
-                            $sql = "SELECT notification FROM notifications WHERE user_id='$id' LIMIT 5";
+                            $sql = "SELECT notification,timestamp FROM notifications WHERE user_id='$id' ORDER BY timestamp DESC LIMIT 5";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
