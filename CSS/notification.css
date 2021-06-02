@@ -1,0 +1,106 @@
+/* ------------- */
+/* Basic Setting */
+/* ------------- */
+
+html,
+body {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #ffffffee;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.nav-wrapper {
+    position: relative!important;
+}
+
+.navbar {
+    position: relative !important;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+}
+
+::selection {
+    color: #fff;
+    background-color: #3ed0ff;
+}
+
+
+/* ------------- */
+/* Content Style */
+/* ------------- */
+
+.notification {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 25px #00384a44;
+    font-weight: 400;
+}
+
+.notification a {
+    text-decoration: none;
+    color: #ffffffee;
+    font-weight: 700;
+    letter-spacing: .5px;
+    transition: 300ms;
+}
+
+.notification a:hover {
+    color: #ffffffaa;
+}
+
+.animation {
+    animation: FadeIn 1s ease-in-out;
+}
+
+
+/* --------- */
+/* Animation */
+/* --------- */
+
+@keyframes FadeIn {
+    0% {
+        top: 50px;
+        opacity: 0;
+    }
+
+    25% {
+        top: -5px;
+        opacity: .75;
+    }
+
+    50% {
+        top: 5px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
