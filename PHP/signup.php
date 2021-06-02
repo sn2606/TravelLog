@@ -57,6 +57,15 @@
       if ($password === $cpassword) {
         $sql = "INSERT INTO users(name, email, username, password) VALUES('$name', '$email', '$username', '$pass')";
         $result = $conn->query($sql);
+        $sql = "SELECT user_id FROM users WHERE username='$username'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            $id = $row['user_id'];
+            $sql = "INSERT into notifications(user_id, notification) VALUES('$id', 'Welcome to TravelLog')";
+            $res = $conn->query($sql);
+          }
+        }
         redirect_to("login.php");
       } else {
         echo "Passwords not matching.";

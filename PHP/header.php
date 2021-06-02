@@ -34,13 +34,22 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i></a>
                         <ul class="dropdown-menu">
                             <li role="presentation">
-                                <a href="#" class="dropdown-menu-header">Notifications</a>
+                                <a href="notification.php" class="dropdown-menu-header">Notifications</a>
                             </li>
-                            <li>Action</li>
-                            <li>Another action</li>
-                            <li>Something else here</li>
-                            <li>Separated link</li>
-                            <li>One more separated link</li>
+                            <?php
+                            dbConnect();
+                            $id = $_SESSION['userid'];
+                            $sql = "SELECT notification FROM notifications WHERE user_id='$id' LIMIT 5";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $notif = $row["notification"];
+                                    echo "<li>$notif</li>";
+                                }
+                            } else {
+                                echo "<li> No notifications! </li>";
+                            }
+                            ?>
                         </ul>
                     </li>
                     <li><a href="profile.php?username=<?php echo $_SESSION['username'] ?>"><i class="fas fa-user-alt"></i></a></li>
