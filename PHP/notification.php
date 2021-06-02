@@ -17,10 +17,11 @@ if ($result->num_rows > 0) {
         $notif = $row["notification"];
         $ts = $row["timestamp"];
         ?>
-        <section class="notification animation" id="notification">
+        <div class="notification animation" class="notification">
             <h6><?php echo $notif ?></h6>
             <a href="#"><?php echo $ts ?></a>
-        </section>
+        </div>
+        <br>
         <?php
         // <!-- Notification Element -->
     }
