@@ -14,7 +14,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../CSS/profile.css">
-  <link rel="stylesheet" type="text/css" href="../CSS/post.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/post.css">  
+  <link rel="stylesheet" href="../CSS/friend.css">
 </head>
 
 <body>
@@ -29,45 +30,60 @@
   check_auth();
   dbConnect();
 
-  $sql = "SELECT user_id, name, username, status, profile_img_url, location FROM users WHERE username = ?";
+  $sql = "SELECT user_id, name, username, status, profile_img, location FROM users WHERE username = ?";
   $statement = $conn->prepare($sql);
   $statement->bind_param('s', $_GET['username']);
   $statement->execute();
   $statement->store_result();
-  $statement->bind_result($id, $name, $username, $status, $profile_image_url, $location);
+  $statement->bind_result($id, $name, $username, $status, $profile_image, $location);
   $statement->fetch();
   ?>
 
   <!-- main -->
   <main class="container">
     <div class="row">
-      <div class="col-md-3">
-        <!-- edit profile -->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>Edit profile</h4>
-            <form method="post" action="edit-profile.php">
-              <div class="form-group">
-                <input class="form-control" type="text" name="status" placeholder="Status" value="">
-              </div>
+      <?php
+      if ($username == $_SESSION['username']) {
+      ?>
+        <div class="col-md-3">
+          <!-- edit profile -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Edit profile</h4>
+              <form method="post" action="edit-profile.php">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="status" placeholder="Status" value="">
+                </div>
 
-              <div class="form-group">
-                <input class="form-control" type="text" name="location" placeholder="Location" value="">
-              </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="location" placeholder="Location" value="">
+                </div>
 
-              <div class="form-group">
-                <input class="btn btn-primary" type="submit" name="update_profile" value="Save">
-              </div>
-            </form>
+                <div class="form-group">
+                  <input class="btn btn-primary" type="submit" name="update_profile" value="Save">
+                </div>
+              </form>
+            </div>
           </div>
+          <!-- ./edit profile -->
         </div>
-        <!-- ./edit profile -->
-      </div>
+      <?php
+      }
+      ?>
       <div class="col-md-6">
         <!-- user profile -->
         <div class="media">
           <div class="media-left">
-            <img src="../Images/Background/pexels-dominika-roseclay-1252500.jpg" class="media-object" style="width: 128px; height: 128px;">
+            <?php
+            if ($profile_image != NULL) {
+              echo '<img src="data:image/jpeg;base64,' . base64_encode($profile_image) . '"/>';
+            } else {
+            ?>
+              <img class="media-object" style="width: 128px; height: 128px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+            <?php
+            }
+            ?>
+            <!-- <img src="../Images/Background/pexels-dominika-roseclay-1252500.jpg" class="media-object" style="width: 128px; height: 128px;"> -->
           </div>
           <div class="media-body">
             <h2 class="media-heading"><?php echo $name ?></h2>
@@ -84,9 +100,9 @@
         <div class="scrollable">
           <!-- post -->
           <?php
-          $user_posts_sql = "SELECT * FROM posts WHERE user_id = {$id} ORDER BY created_at DESC";
+          $user_posts_sql = "SELECT * FROM posts, users WHERE posts.user_id = users.user_id AND users.user_id = {$id} ORDER BY created_at DESC";
           require "post.php";
-          displayPosts($user_posts_sql, $conn, 1);
+          displayPosts($user_posts_sql, $conn, 1, $username);
           ?>
         </div>
         <!-- ./feed -->
@@ -94,30 +110,20 @@
       <!-- ./timeline -->
       <div class="col-md-3">
         <!-- friends -->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>Friends</h4>
-            <!-- <ul>
-              <li>
-                <a class="user" href="#">peterpan</a>
-                <a class="text-danger" href="#">[unfriend]</a>
-              </li>
-            </ul> -->
-            <div class="friend-box">
-              <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
-              <div class="name-box">
-                Awa L
-              </div>
-              <div class="user-name-box">
-                @awaaa sent you a friend request.
-              </div>
-              <div class="request-btn-row" data-username="purplekoala395">
-                <!-- <button class="friend-request accept-request" data-username="purplekoala395">Accept</button> -->
-                <button class="friend-request decline-request" data-username="purplekoala395">Unfriend</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h4>Friends</h4>
+        <?php
+        dbConnect();
+        $sql = "SELECT * FROM users,friends WHERE friends.friend_id = {$id} 
+        AND users.user_id = friends.user_id LIMIT 3";
+
+        require_once "disp-friend-box.php";
+        // mode is how to display the box
+        // 1 - Add friend (send request)
+        // 2 - Accept / Decline friend requests
+        // 3 - Remove existing friends
+        $mode = 3;
+        dispFriendBox($sql, $conn, $mode, $username);
+        ?>
         <!-- ./friends -->
       </div>
     </div>

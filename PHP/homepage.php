@@ -52,20 +52,30 @@ session_start();
     <div class="row">
       <div class="col-md-3">
         <!-- profile brief -->
+        <?php
+        $sql = "SELECT profile_img, status FROM users WHERE username = ?";
+        $statement = $conn->prepare($sql);
+        $statement->bind_param('s', $_SESSION['username']);
+        $statement->execute();
+        $statement->store_result();
+        $statement->bind_result($profile_img, $status);
+        $statement->fetch();
+        ?>
         <div class="card profile-card-5">
           <div class="card-img-block">
-            <img class="card-img-top" src="https://images.pexels.com/photos/3042160/pexels-photo-3042160.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Card image cap">
+            <?php
+            if ($profile_img != NULL) {
+              echo '<img src="data:image/jpeg;base64,' . base64_encode($profile_img) . '"/>';
+            } else {
+            ?>
+              <img class="media-object" style="width: 150px; height: 150px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+            <?php
+            }
+            ?>
           </div>
           <div class="card-body pt-0">
             <h5 class="card-title"><?php echo $_SESSION['name'] ?></h5>
             <?php
-            $sql = "SELECT status FROM users WHERE username = ?";
-            $statement = $conn->prepare($sql);
-            $statement->bind_param('s', $_SESSION['username']);
-            $statement->execute();
-            $statement->store_result();
-            $statement->bind_result($status);
-            $statement->fetch();
             echo "@" . $_SESSION['username'];
             ?>
             <p class="card-text"><?php echo $status ?></p>
@@ -123,7 +133,7 @@ session_start();
         <div class="scrollable">
           <!-- post -->
           <?php
-          $sql = "SELECT * FROM posts ORDER BY created_at DESC";
+          $sql = "SELECT * FROM posts, users WHERE posts.user_id = users.user_id ORDER BY created_at DESC";
 
           require "post.php";
           displayPosts($sql, $conn, 0);
@@ -167,7 +177,7 @@ session_start();
         // 2 - Accept / Decline friend requests
         // 3 - Remove existing friends
         $mode = 3;
-        dispFriendBox($sql, $conn, $mode);
+        dispFriendBox($sql, $conn, $mode, $_SESSION['username']);
         ?>
         <!-- ./friends -->
       </div>

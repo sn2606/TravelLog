@@ -1,7 +1,11 @@
 /* styles */
 
-a {
-  color: #333;
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.scrollable a {
+  color: #333 !important;
 }
 
 body {
@@ -15,11 +19,11 @@ body {
 } */
 
 .nav-wrapper {
-  position: relative!important;
+  position: relative !important;
 }
 
 nav {
-  position: relative!important;
+  position: relative !important;
 }
 
 .menu {

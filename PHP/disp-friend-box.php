@@ -1,5 +1,5 @@
 <?php
-function dispFriendBox($sql, $conn, $mode)
+function dispFriendBox($sql, $conn, $mode, $username = null)
 {
     $result = $conn->query($sql);
 
@@ -14,7 +14,17 @@ function dispFriendBox($sql, $conn, $mode)
 
                     <div class="friend-box">
                         <a href="profile.php?username=<?php echo $tuser['username'] ?>" class="profile-links">
-                            <div class="friend-profile" style="background-image: url(&quot;https://images.pexels.com/photos/3328072/pexels-photo-3328072.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500&quot;);"></div>
+                            <div class="friend-profile">
+                                <?php
+                                if ($tuser['profile_img'] != NULL) {
+                                    echo '<img src="data:image/jpeg;base64,' . base64_encode($tuser['profile_img']) . '"/>';
+                                } else {
+                                ?>
+                                    <img class="media-object" style="width: 70px; height: 70px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+                                <?php
+                                }
+                                ?>
+                            </div>
                         </a>
                         <div class="name-box">
                             <a href="profile.php?username=<?php echo $tuser['username'] ?>" class="profile-links">
@@ -46,7 +56,13 @@ function dispFriendBox($sql, $conn, $mode)
                             } elseif ($mode === 3) {
                             ?>
                                 <a href="remove-friend.php?uid=<?php echo $tuser['user_id'] ?>">
-                                    <button class="friend-request decline-request">Remove</button>
+                                    <?php
+                                    if ($username === $_SESSION['username']) {
+                                    ?>
+                                        <button class="friend-request decline-request">Remove</button>
+                                    <?php
+                                    }
+                                    ?>
                                 </a>
                             <?php
                             }
@@ -66,7 +82,7 @@ function dispFriendBox($sql, $conn, $mode)
     <?php
     } else {
     ?>
-    <p class="text-center">Nothing to display yet!</p>
-    <?php
+        <p class="text-center">Nothing to display yet!</p>
+<?php
     }
 }

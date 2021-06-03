@@ -2,8 +2,12 @@
 /************************************* ACCEPT/DECLINE FRIEND REQUESTS ******************************/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 
+a {
+  color: #333 !important;
+}
+
 .profile-links {
-    color: #333;
+    color: #333 !important;
     text-decoration: none;
 }
 
