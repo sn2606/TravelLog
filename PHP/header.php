@@ -57,8 +57,10 @@
                 <div class="not-menu">
                     <div class="search">
                         <div class="search-content">
-                            <button class="search-button"><i class="fas fa-search"></i></button>
-                            <input type="text" class="search-input" placeholder="Search here...">
+                            <form action="search.php" method="post">
+                                <button type="submit" name="sub" class="search-button"><i class="fas fa-search"></i></button>
+                                <input type="text" name="term" class="search-input" placeholder="Search here...">
+                            </form>
                         </div>
                     </div>
                     <div class="sign-out">
