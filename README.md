@@ -21,9 +21,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -76,7 +73,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -93,7 +89,7 @@
 
 ### Built With
 
-* [HTML, CSS, JavaScript]()
+* [HTML, CSS, JavaScript, PHP, MySQL]()
 * [fontawesome](https://fontawesome.com/)
 * [pexels](https://www.pexels.com/)
 
@@ -107,7 +103,7 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Live Server
+* PHP Development Environment (I use XAMPP) 
 
 ### Installation
 
@@ -115,7 +111,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/sn2606/TravelLog.git
    ```
-2. Run the project on a live server
+2. Run the project (database needs to be present)
 
 
 
@@ -161,17 +157,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Your Name - [@LinkedIn](https://www.linkedin.com/in/swaranjana-nayak/) - swaranjananayak@gmail.com
 
 Project Link: [https://github.com/sn2606/TravelLog](https://github.com/sn2606/TravelLog)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
 
 
 
