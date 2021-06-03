@@ -32,6 +32,10 @@ nav {
   top: 0;
 }
 
+nav a {
+  color: #fff !important;
+}
+
 .menu {
   margin-bottom: 0;
 }

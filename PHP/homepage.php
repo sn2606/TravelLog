@@ -146,7 +146,7 @@ session_start();
         <h4>Add Friend</h4>
         <?php
         dbConnect();
-        $sql = "SELECT user_id, name, username, 
+        $sql = "SELECT user_id, name, username,
         (SELECT COUNT(*) FROM friends WHERE friends.user_id = users.user_id AND friends.friend_id = {$_SESSION['userid']}) 
         AS is_friend FROM users WHERE user_id != {$_SESSION['userid']} 
         AND (user_id NOT IN (SELECT friend_id FROM friend_requests WHERE friend_requests.user_id = {$_SESSION['userid']} AND friend_requests.friend_id = users.user_id)) 

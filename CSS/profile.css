@@ -26,6 +26,10 @@ nav {
   position: relative !important;
 }
 
+nav a {
+  color: #fff !important;
+}
+
 .menu {
   margin-bottom: 0;
 }

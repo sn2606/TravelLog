@@ -16,8 +16,11 @@ function dispFriendBox($sql, $conn, $mode, $username = null)
                         <a href="profile.php?username=<?php echo $tuser['username'] ?>" class="profile-links">
                             <div class="friend-profile">
                                 <?php
-                                if ($tuser['profile_img'] != NULL) {
-                                    echo '<img style="width: 70px; height: 70px;" src="data:image/jpeg;base64,' . base64_encode($tuser['profile_img']) . '"/>';
+                                $id = $tuser['user_id'];
+                                $res = $conn->query("SELECT profile_img FROM users WHERE user_id='$id'");
+                                $profile_img = ($res->fetch_assoc())['profile_img'];
+                                if ($profile_img != NULL) {
+                                    echo '<img style="width: 70px; height: 70px;" src="data:image/jpeg;base64,' . base64_encode($profile_img) . '"/>';
                                 } else {
                                 ?>
                                     <img class="media-object" style="width: 70px; height: 70px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
