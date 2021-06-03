@@ -51,6 +51,7 @@
         $_SESSION['name'] = $userpass['name'];
         $_SESSION['username'] = $username;
         $_SESSION['post-flag'] = 1;
+        $_SESSION['prof-flag'] = 1;
         $_SESSION['userid'] = $userpass['user_id'];
       ?>
         <script>

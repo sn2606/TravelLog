@@ -65,7 +65,7 @@ session_start();
           <div class="card-img-block">
             <?php
             if ($profile_img != NULL) {
-              echo '<img src="data:image/jpeg;base64,' . base64_encode($profile_img) . '"/>';
+              echo '<img style="width: 150px; height: 150px;" src="data:image/jpeg;base64,' . base64_encode($profile_img) . '"/>';
             } else {
             ?>
               <img class="media-object" style="width: 150px; height: 150px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">

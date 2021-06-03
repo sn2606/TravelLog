@@ -14,7 +14,7 @@ function displayPosts($sql, $conn, $num, $username=null)
                             <div class="user-img">
                                 <?php
                                 if ($post['profile_img'] != NULL) {
-                                    echo '<img src="data:image/jpeg;base64,' . base64_encode($post['profile_img']) . '"/>';
+                                    echo '<img style="width: 35px; height: 35px;" src="data:image/jpeg;base64,' . base64_encode($post['profile_img']) . '"/>';
                                 } else {
                                 ?>
                                     <img class="media-object" style="width: 35px; height: 35px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">

@@ -17,7 +17,7 @@ function dispFriendBox($sql, $conn, $mode, $username = null)
                             <div class="friend-profile">
                                 <?php
                                 if ($tuser['profile_img'] != NULL) {
-                                    echo '<img src="data:image/jpeg;base64,' . base64_encode($tuser['profile_img']) . '"/>';
+                                    echo '<img style="width: 70px; height: 70px;" src="data:image/jpeg;base64,' . base64_encode($tuser['profile_img']) . '"/>';
                                 } else {
                                 ?>
                                     <img class="media-object" style="width: 70px; height: 70px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">

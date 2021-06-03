@@ -129,6 +129,10 @@ input[type="file"] {
   font-weight: 300;
 }
 
+.profile-card-5 a {
+  color: #eee !important;
+}
+
 /************************************ FRIEND BOXES **************************************************/
 h4 {
   padding-top: 10px;

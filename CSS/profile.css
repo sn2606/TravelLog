@@ -47,6 +47,50 @@ main hr {
   margin-left: 10px;
 }
 
+/************************************** TEXT CONTAINER **********************************************/
+.container {
+  font-family: "Raleway", sans-serif;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  /* overflow: auto; */
+  /* margin-top: 10%; */
+}
+
+.container .user {
+  color: #333 !important;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input-group-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #333;
+  border: #333;
+  color: #fff;
+  margin: 0;
+}
+
+.btn :hover {
+  /* color: #fff !important; */
+  background-color: #ccc !important;
+}
+
+.container hr {
+  background-color: #333;
+  margin-bottom: 0px;
+}
+
+.media-body {
+  margin-left: 10px;
+}
+
+
 /************************************* TIMELINE ***********************************************/
 
 

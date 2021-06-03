@@ -13,8 +13,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../JS/homepage.js"></script>
   <link rel="stylesheet" type="text/css" href="../CSS/profile.css">
-  <link rel="stylesheet" type="text/css" href="../CSS/post.css">  
+  <link rel="stylesheet" type="text/css" href="../CSS/post.css">
   <link rel="stylesheet" href="../CSS/friend.css">
 </head>
 
@@ -60,12 +61,36 @@
                 </div>
 
                 <div class="form-group">
-                  <input class="btn btn-primary" type="submit" name="update_profile" value="Save">
+                  <input class="btn" type="submit" name="update_profile" value="Save">
                 </div>
               </form>
             </div>
           </div>
           <!-- ./edit profile -->
+          <!-- edit profile img -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Change profile image</h4>
+              <form method="post" action="edit-profile.php" enctype="multipart/form-data">
+                <p id="size-chk">
+                  <?php
+                  if ($_SESSION['prof-flag'] == 0) {
+                    echo "Please upload a valid image";
+                  }
+                  $_SESSION['prof-flag'] = 1;
+                  ?>
+                </p>
+                <span class="input-group-btn">
+                  <label class="btn" type="button" for="get-photo">
+                    <input type="file" accept="image/*" name="get-photo" id="get-photo">
+                    <i class="far fa-images"></i>
+                  </label>
+                  <input type="submit" value="Change" name="update_img" class="btn">
+                </span>
+              </form>
+            </div>
+          </div>
+          <!-- /edit profile img -->
         </div>
       <?php
       }
@@ -76,7 +101,7 @@
           <div class="media-left">
             <?php
             if ($profile_image != NULL) {
-              echo '<img src="data:image/jpeg;base64,' . base64_encode($profile_image) . '"/>';
+              echo '<img style="width: 128px; height: 128px;" src="data:image/jpeg;base64,' . base64_encode($profile_image) . '"/>';
             } else {
             ?>
               <img class="media-object" style="width: 128px; height: 128px;" alt="Portrait Placeholder" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
@@ -132,7 +157,7 @@
 
   <!-- footer -->
   <?php
-  include "footer.php";
+  // include "footer.php";
   ?>
   <!-- ./footer -->
 </body>
