@@ -23,7 +23,6 @@ if (isset($_POST['update_img'])) {
 
         // $sql = "INSERT INTO posts (user_id, content, content_img, created_at) VALUES (?, ?, ?, ?)";
         $blobimg = file_get_contents($_FILES['get-photo']['tmp_name']);
-        echo base64_encode($blobimg);
         $uid = $_SESSION['userid'];
         // $sql = "INSERT INTO users(profile_img) VALUES '$blobimg' WHERE user_id = '$uid'";
         $statement = $conn->prepare("UPDATE users SET profile_img = ? WHERE user_id = ?");

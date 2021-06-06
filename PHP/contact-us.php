@@ -1,3 +1,17 @@
+<?php
+if (isset($_POST['sub'])) {
+  $to = "swaranjananayak@gamil.com"; // this is your Email address
+  $from = $_POST['email']; // this is the sender's Email address
+  $name = $_POST['name'];
+  $subject = "Form submission";
+  $message = $name . " " . $from . " wrote the following:" . "\n\n" . $_POST['message'];
+
+  $headers = "From:" . "adreaminginworld@gmail.com";
+  mail($to, $subject, $message, $headers);
+  echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -60,22 +74,22 @@
 
       <!-- the actual form -->
       <div class="contact-form">
-        <form>
+        <form action="contact-us.php" method="POST">
           <h2>Send Message</h2>
           <div class="input-box">
-            <input type="text" name="" value="" required>
+            <input type="text" name="name" value="" required>
             <span>Full Name</span>
           </div>
           <div class="input-box">
-            <input type="text" name="" value="" required>
+            <input type="text" name="email" value="" required>
             <span>Email</span>
           </div>
           <div class="input-box">
-            <textarea required></textarea>
+            <textarea name="message" required></textarea>
             <span>Message</span>
           </div>
           <div class="input-box">
-            <input type="submit" name="" value="Send">
+            <input type="submit" name="sub" value="Send">
           </div>
         </form>
       </div>
