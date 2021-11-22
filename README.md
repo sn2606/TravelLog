@@ -23,6 +23,8 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Stars][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
 
 
 
@@ -68,8 +70,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -102,33 +102,27 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* PHP Development Environment (I use XAMPP) 
+1. XAMPP
+   * [Download](https://www.apachefriends.org/download.html)
+   * [Install](https://xamppguide.com/)
+2. IDE of choice - e.g. [VSCode](https://code.visualstudio.com/download)
+3. Web Browser of choice - e.g. [Google Chrome](https://www.google.com/intl/en_in/chrome/) 
 
 ### Installation
 
-1. Clone the TravelLog
-   ```sh
-   git clone https://github.com/sn2606/TravelLog.git
+1. Start XAMPP and open phpMyAdmin on browser.
+2. Create a new database for the project and name it "travellog"
+3. Import the [Database](https://github.com/sn2606/TravelLog/blob/master/Database/travellog.sql)
+4. Clone the repository in any folder and name folder as per choice.
+    ```
+    git clone git@github.com:sn2606/TravelLog.git your-folder-name
+    ```
+5. Start XAMPP servers - Apache and MySQL
+6. Start PHP development server (at port of your choice) in Folder Directory via command line
    ```
-2. Run the project (database needs to be present)
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/sn2606/TravelLog/issues) for a list of proposed features (and known issues).
-
+    php -S localhost:5000
+   ```
+7. Navigate to http://localhost:5000
 
 
 <!-- CONTRIBUTING -->
@@ -143,18 +137,10 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@LinkedIn](https://www.linkedin.com/in/swaranjana-nayak/) - swaranjananayak@gmail.com
+Swaranjana Nayak - [@LinkedIn](https://www.linkedin.com/in/swaranjana-nayak/) - swaranjananayak@gmail.com
 
 Project Link: [https://github.com/sn2606/TravelLog](https://github.com/sn2606/TravelLog)
 
@@ -176,4 +162,3 @@ Project Link: [https://github.com/sn2606/TravelLog](https://github.com/sn2606/Tr
 [linkedin-url]: https://www.linkedin.com/in/swaranjana-nayak/
 [Product Name Screen Shot]: Images/Landing-Page-SS.png
 [product-screenshot]: Images/about-us-rec.gif
-
